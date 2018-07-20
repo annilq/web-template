@@ -1,0 +1,91 @@
+<%- include('header'); -%>
+  <ul class="index-banner banner">
+    <li class="banner-item" style="background:url('images/index-banner1-2.png') center 0 no-repeat">
+      <img src="images/index-banner1-1.png">
+    </li>
+    <li class="banner-item" style="background:url('images/index-banner2-2.png') center 0 no-repeat">
+      <img src="images/index-banner2-1.png">
+    </li>
+    <li class="banner-item" style="background:url('images/index-banner3-2.png') center 0 no-repeat">
+      <img src="images/index-banner3-1.png">
+    </li>
+  </ul>
+  <div class="container section">
+    <div class="section-title tc">
+      新闻动态
+    </div>
+    <div class="section-tips tc">
+      推动行业进步、引领行业发展,中浩建设愿与社会各界朋友一起，真诚合作，携手共赢，</br>
+      共创美好未来！
+    </div>
+    <div class="news-list">
+      <% [1,2,3].forEach(function(user,index){ %>
+        <div class="news-figure">
+          <img src="images/index-new<%-index+1 %>.png" alt="">
+          <p> 2018年6月10日，黄水强总经理与宁波大荣建设集团领导一行交流
+          </p>
+          <div class="news-button tc">READ MORE</div>
+        </div>
+        <% }); %>
+    </div>
+    <a href="#" target="_blank" class="news-more">
+      更多>
+    </a>
+  </div>
+  <div class="qualification" style="background:url('images/index-zz-bg.png') center 0 no-repeat">
+    <div class="qua-content">
+      <ul class="qua-list">
+        <% ("1111".repeat(10).split("")).forEach(function(user){ %>
+          <li class="qua-item">建筑工程施工总承包
+            <p class="que-level">一级</p>
+          </li>
+          <% }); %>
+      </ul>
+    </div>
+  </div>
+  <div class="project-section section">
+    <div class="section-title tc">
+      业绩工程
+    </div>
+    <div class="section-tips tc">
+      推动行业进步、引领行业发展,中浩建设愿与社会各界朋友一起，真诚合作，携手共赢，</br>
+      共创美好未来！
+    </div>
+     <!--元素大于10个才做成两行，平分数目，小于10个的话做一行滚动  -->
+    <div class="project-list">
+      <% [1,2,3,4,5,6,7,8,9,10].forEach(function(user,index){ %>
+        <div class="project-figure">
+          <img src="images/index-project<%-index+1 %>.png" alt="">
+        </div>
+        <% }); %>
+    </div>
+  
+    <div class="project-list">
+      <% [1,2,3,4].forEach(function(user,index){ %>
+        <div class="project-figure">
+          <img src="images/index-project<%-index+1 %>.png" alt="">
+        </div>
+        <% }); %>
+    </div>
+  </div>
+  <%- include('footer'); -%>
+    </body>
+
+    </html>
+    <script>
+      $(document).ready(function () {
+        $('.banner').slick({
+          dots: true
+        });
+        $('.project-list').slick({
+          touchMove:false,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        });
+      })
+    </script>
+    </body>
+
+    </html>
