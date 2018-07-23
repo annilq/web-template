@@ -9,9 +9,11 @@ p {
   margin: 0;
   list-style: none;
 }
+
 .tc {
   text-align: center;
 }
+
 .header {
   height: 122px;
   padding-top: 18px;
@@ -31,6 +33,7 @@ p {
   top: 0;
   color: #949494;
 }
+
 .header .email .emial-logo {
   width: 30px;
   height: 20px;
@@ -39,6 +42,7 @@ p {
   vertical-align: bottom;
   background: url("../images/yjglogo.png") center 0 no-repeat;
 }
+
 .menu {
   height: 50px;
   line-height: 50px;
@@ -132,7 +136,8 @@ p {
   color: #b5b7b9;
   padding: 0 10px;
 }
-.back-up{
+
+.back-up {
   position: fixed;
   right: 50px;
   bottom: 170px;
@@ -141,6 +146,7 @@ p {
   cursor: pointer;
   background: url("../images/back-up.png") 0 0 no-repeat;
 }
+
 .link-title {
   color: #fff;
 }
@@ -190,32 +196,39 @@ p {
   height: 630px;
   overflow: hidden;
 }
+
 .banner-item img {
   width: 1200px;
   display: block;
   margin: 0 auto;
 }
+
 /* 新闻中心 */
+
 .section {
   padding: 55px 0 40px;
 }
+
 .section-title {
   font-size: 36px;
   line-height: 40px;
   letter-spacing: 4px;
   color: #181513;
 }
+
 .section-tips {
   color: #808080;
   font-size: 12px;
   margin-top: 20px;
   margin-bottom: 50px;
 }
+
 .news-list {
   padding: 0 20px 17px;
   overflow: hidden;
   height: auto;
 }
+
 .news-figure {
   width: 360px;
   height: 344px;
@@ -223,9 +236,11 @@ p {
   float: left;
   margin-right: 40px;
 }
+
 .news-figure:last-child {
   margin-right: 0;
 }
+
 .news-figure img {
   width: 100%;
   height: 100%;
@@ -235,6 +250,7 @@ p {
   -ms-user-select: none;
   user-select: none;
 }
+
 .news-figure p {
   position: absolute;
   bottom: 0;
@@ -247,6 +263,7 @@ p {
   color: #2b2a2a;
   background-color: rgba(255, 255, 255, 0.9);
 }
+
 .news-figure .news-button {
   width: 140px;
   line-height: 34px;
@@ -263,6 +280,7 @@ p {
   transform: translate(-50%, 50%);
   cursor: pointer;
 }
+
 .news-more {
   width: 56px;
   font-size: 18px;
@@ -272,12 +290,15 @@ p {
   display: block;
   text-decoration: none;
 }
+
 /* 企业资质 */
+
 .qualification {
   height: 530px;
   position: relative;
   background-color: #24e62e;
 }
+
 .qua-content {
   width: 768px;
   padding: 30px 60px;
@@ -291,13 +312,16 @@ p {
   box-shadow: 0px 0px 24px 0px rgba(184, 183, 176, 0.9);
   opacity: 0.9;
 }
+
 .qua-list {
   height: 268px;
   overflow-y: scroll;
 }
+
 .qua-list::-webkit-scrollbar {
   display: none;
 }
+
 .qua-item {
   width: 280px;
   height: 35px;
@@ -313,6 +337,7 @@ p {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
 .qua-item::before {
   position: absolute;
   width: 10px;
@@ -323,60 +348,150 @@ p {
   top: 12px;
   content: "";
 }
-.qua-item:nth-child(2n + 1) {
+
+.qua-item:nth-child(2n+1) {
   margin-left: 0;
 }
+
 .que-level {
   position: absolute;
   right: 0;
   top: 0;
 }
-.project-section{
+
+.project-section {
   padding-bottom: 0;
 }
+
 .project-list {
   height: auto;
   overflow: hidden;
 }
+
 .project-figure {
   width: 20%;
   float: left;
 }
-.project-figure img{
+
+.project-figure img {
   width: 100%;
   height: 100%;
   display: block;
 }
+
 /* 二级页面样式 */
-.subpage{
+
+.subpage {
   background-color: #f5f5f5;
 }
-.subpage-banner{
+
+.subpage-banner {
   height: 580px;
 }
-.subpage-container{
+
+.subpage-container {
   margin-top: 40px;
-  margin-bottom: 40px;
   height: auto;
 }
-.aside-menu{
+
+.aside-menu {
+  font-size: 18px;
+  color: #333333;
   float: left;
   width: 290px;
   line-height: 60px;
   margin-right: 40px;
   background-color: #fff;
 }
-.aside-menu li{
+
+.aside-menu li {
   padding: 0 20px;
+  cursor: pointer;
+  background: url("../images/more-a.png") 93% center no-repeat;
 }
-.aside-menu li:first-child{
+
+.aside-menu li:hover,
+.aside-menu li.active {
+  background-color: #fafafa;
+}
+
+.aside-menu-title {
+  padding: 0 20px;
   line-height: 80px;
-  color: #fff;
+  color: #f5f5f5;
+  font-size: 24px;
   background-color: #ff7c38;
 }
-.subpage-content{
+
+.subpage-content {
   width: 732px;
   float: right;
   background-color: #fff;
-  padding: 40px 69px;
+  padding: 30px 69px;
+  margin-bottom: 40px;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  color: #000;
+}
+
+.subpage-title-container {
+  text-align: center;
+  font-size: 40px;
+  color: #010101;
+}
+
+.subpage-title {
+  margin: 20px 0 30px 0;
+  display: inline-block;
+  padding: 0 15px;
+  position: relative;
+  line-height: 1.1;
+}
+
+.subpage-title::before,
+.subpage-title::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+}
+
+.subpage-title::before {
+  top: 0;
+  left: 0;
+  background: url("../images/title-left.png") left top no-repeat;
+}
+
+.subpage-title::after {
+  bottom: 0;
+  right: 0;
+  background: url("../images/title-right.png") right bottom no-repeat;
+}
+
+.subpage-content-text img {
+  margin-bottom: 30px;
+}
+
+.subpage-content-text p {
+  text-indent: 2em;
+  line-height: 25px;
+}
+
+/* 企业文化相册 */
+
+.culture-container {
+  background: url("../images/qywh-bg.jpg") center 0 no-repeat;
+}
+
+.culture-container .container {
+  background: url("../images/culture-bg.jpg") center 0 no-repeat;
+  height: 856px;
+}
+
+.culture-album {
+  width: 906px;
+  height: 704px;
+  margin: 60px auto 0;
 }
