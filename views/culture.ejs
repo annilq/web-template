@@ -11,186 +11,26 @@
                     <div id="book-zoom">
                         <div class="sj-book">
                             <% ("1".repeat(66).split("")).forEach(function(user,index){ %>
-                                <div>
+                                <div data-picid="<%-index%>">
                                     <img src="images/album/<%-index %>.png" alt="">
                                 </div>
                                 <% }); %>
                         </div>
                     </div>
+                    <div class="prebtn"></div>
+                    <div class="nextbtn"></div>
                     <div id="slider-bar" class="turnjs-slider">
                         <div id="slider"></div>
                     </div>
+    
                 </div>
             </div>
         </div>
     </div>
     <%- include('footer'); -%>
-        <link rel='stylesheet' href='/stylesheets/jquery.ui.css' />
-        <link rel='stylesheet' href='/stylesheets/steve-jobs.css' />
         <script src="/libs/turnjs4/extras/jquery-ui-1.8.20.custom.min.js"></script>
         <script type="text/javascript" src="/libs/turnjs4/lib/hash.js"></script>
         <script src="/libs/turnjs4/lib/turn.min.js"></script>
-        <script src="../javascripts/steve-jobs.js"></script>
-        <script type="text/javascript">
-            function loadApp() {
-
-                var flipbook = $('.sj-book');
-
-                // Slider
-
-                // URIs
-
-                Hash.on('^page\/([0-9]*)$', {
-                    yep: function (path, parts) {
-
-                        var page = parts[1];
-
-                        if (page !== undefined) {
-                            if ($('.sj-book').turn('is'))
-                                $('.sj-book').turn('page', page);
-                        }
-
-                    },
-                    nop: function (path) {
-
-                        if ($('.sj-book').turn('is'))
-                            $('.sj-book').turn('page', 1);
-                    }
-                });
-
-                // Arrows
-
-                $(document).keydown(function (e) {
-
-                    var previous = 37,
-                        next = 39;
-
-                    switch (e.keyCode) {
-                        case previous:
-
-                            $('.sj-book').turn('previous');
-
-                            break;
-                        case next:
-
-                            $('.sj-book').turn('next');
-
-                            break;
-                    }
-
-                });
-
-
-                // Flipbook
-
-                flipbook.bind('click', zoomHandle);
-
-                flipbook.turn({
-                    acceleration: !isChrome(),
-                    autoCenter: true,
-                    duration: 1000,
-                    pages: 66,
-                    when: {
-                        turned: function (e, page, view) {
-
-                            var book = $(this);
-
-                            if (page == 2 || page == 3) {
-                                book.turn('peel', 'br');
-                            }
-                            updateDepth(book);
-
-                            $('#slider').slider('value', getViewNumber(book, page));
-
-                            book.turn('center');
-
-                        },
-
-                        start: function (e, pageObj) {
-
-                            moveBar(true);
-
-                        },
-
-                        end: function (e, pageObj) {
-
-                            var book = $(this);
-
-                            updateDepth(book);
-
-                            setTimeout(function () {
-
-                                $('#slider').slider('value', getViewNumber(book));
-
-                            }, 1);
-
-                            moveBar(false);
-
-                        },
-
-                        missing: function (e, pages) {
-
-                            for (var i = 0; i < pages.length; i++) {
-                                addPage(pages[i], $(this));
-                            }
-
-                        }
-                    }
-                });
-
-                $("#slider").slider({
-                    min: 1,
-                    max: 100,
-
-                    start: function (event, ui) {
-
-                        if (!window._thumbPreview) {
-                            _thumbPreview = $('<div />', {
-                                'class': 'thumbnail'
-                            }).html('<div></div>');
-                            setPreview(ui.value);
-                            _thumbPreview.appendTo($(ui.handle));
-                        } else
-                            setPreview(ui.value);
-
-                        moveBar(false);
-
-                    },
-
-                    slide: function (event, ui) {
-
-                        setPreview(ui.value);
-
-                    },
-
-                    stop: function () {
-
-                        if (window._thumbPreview)
-                            _thumbPreview.removeClass('show');
-
-                        $('.sj-book').turn('page', Math.max(1, $(this).slider('value') * 2 - 2));
-
-                    }
-                });
-
-
-                $('#slider').slider('option', 'max', numberOfViews(flipbook));
-
-                flipbook.addClass('animated');
-
-                // Show canvas
-
-                $('#canvas').css({
-                    visibility: ''
-                });
-            }
-
-            $('#canvas').css({
-                visibility: 'hidden'
-            });
-            loadApp()
-        </script>
-
+        <script src="../javascripts/cultrue.js"></script>
         </body>
-
         </html>
