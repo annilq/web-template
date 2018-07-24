@@ -19,14 +19,17 @@ app.use("/news", function(req, res, next) {
   app.use("/newsdetail", function(req, res, next) {
     res.render("newsdetail");
   });
+  app.use("/projects", function(req, res, next) {
+    res.render("projects");
+  });
+  app.use("/projectsdetail", function(req, res, next) {
+    res.render("projectsdetail");
+  });
   app.use("/staff", function(req, res, next) {
     res.render("staff");
   });
   app.use("/qualification", function(req, res, next) {
     res.render("qualification");
-  });
-  app.use("/projects", function(req, res, next) {
-    res.render("projects");
   });
   app.use("/hr", function(req, res, next) {
     res.render("hr");

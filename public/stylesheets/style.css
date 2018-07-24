@@ -9,8 +9,9 @@ p {
   margin: 0;
   list-style: none;
 }
-a{
-  text-decoration: none
+a {
+  text-decoration: none;
+  color: inherit
 }
 .tc {
   text-align: center;
@@ -351,7 +352,7 @@ a{
   content: "";
 }
 
-.qua-item:nth-child(2n+1) {
+.qua-item:nth-child(2n + 1) {
   margin-left: 0;
 }
 
@@ -497,7 +498,7 @@ a{
   background: url("../images/li-icon.png") 0 0 no-repeat;
   background-size: 100%;
   content: "";
-  display: inline-block
+  display: inline-block;
 }
 
 .fzlc {
@@ -675,10 +676,11 @@ a{
   overflow: hidden;
   cursor: pointer;
 }
-.news-list li:hover .news-content,.news-list li:hover .slim{
-  background-color: #fafafa
+.news-list li:hover .news-content,
+.news-list li:hover .slim {
+  background-color: #fafafa;
 }
-.news-list li:hover .news-title{
+.news-list li:hover .news-title {
   color: #ff7c38;
   text-decoration: underline;
 }
@@ -693,40 +695,79 @@ a{
 }
 
 .news-list .news-title {
-	font-size: 16px;
-	line-height: 40px;
+  font-size: 16px;
+  line-height: 40px;
   color: #000000;
 }
-.slim.news-title{
+.slim.news-title {
   font-size: 12px;
 }
 
 .news-list .news-date {
-	color: #a8a8a8;
+  color: #a8a8a8;
 }
 
 .news-list .news-text {
   margin-top: 14px;
-	font-size: 12px;
-	color: #a8a8a8;
+  font-size: 12px;
+  color: #a8a8a8;
 }
-.subpage-content-date{
+.subpage-content-date {
   text-align: center;
-	line-height: 40px;
+  line-height: 40px;
   color: #b3b3b3;
-  margin-bottom:-10px;
+  margin-bottom: -10px;
+  margin-top: -10px;
 }
 .pagination {
   margin-top: 20px;
   text-align: center;
   color: #999;
 }
-.pagination a{
+.pagination a {
   font-size: 12px;
   color: inherit;
   margin-right: 10px;
-  text-decoration: none
+  text-decoration: none;
 }
-.pagination .cur{
+.pagination .cur {
   color: #ff7c38;
+}
+.project-page-list {
+  height: auto;
+  overflow: hidden;
+}
+.project-page-list li {
+  width: 352px;
+  height: 220px;
+  float: left;
+  position: relative;
+}
+.project-page-list li:nth-child(odd) {
+  margin-right: 26px;
+}
+.project-page-list li img {
+  display: block
+}
+.project-page-list li .project-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+	line-height: 50px;
+  color: #333333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.9;
+}
+.load-more{
+  line-height: 40px;
+  background-color: #fafafa;
+  text-align: center;
+  color: #666;
+  margin-top: 30px;
+  cursor: pointer;
 }
