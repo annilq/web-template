@@ -1,7 +1,70 @@
 <%- include('header'); -%>
-    <div class="banner">
-        <div class="container">
-            hey jude
+    <div class="subpage">
+        <ul class="subpage-banner banner">
+            <li class="banner-item" style="background:url('images/new-banner-2.png') center 0 no-repeat">
+                <img src="images/new-banner-1.png">
+            </li>
+        </ul>
+        <div class="subpage-container container">
+            <div class="aside-menu">
+                <div class="aside-menu-title">新闻中心 / News</div>
+                <ul class="aside-menu-list">
+                    <li class="active">公司新闻</li>
+                    <li>媒体新闻</li>
+                    <li>行业新闻</li>
+                </ul>
+            </div>
+            <div class="subpage-content">
+                <div class="breadcrumb">
+                    关于中浩 > 公司新闻
+                </div>
+                <div class="subpage-title-container">
+                    <div class="subpage-title">
+                        公司新闻
+                    </div>
+                </div>
+                <ul class="news-list">
+                    <% [1,2,3].forEach(function(user,index){ %>
+                        <li>
+                            <a href="/newsdetail">
+                                <div class="news-pic">
+                                    <img src="images/news-new1.png" alt="">
+                                </div>
+                                <div class="news-content">
+                                    <div class="news-title">【公司新闻】情浓端午，中浩人的“粽情粽意”</div>
+                                    <div class="news-date">2018-02-21</div>
+                                    <div class="news-text">“五月五，是端阳。门插艾，香满堂。吃粽子，洒白糖。龙舟下水喜洋洋。” 为迎接中华民族传统节日——端午节，6月15日下午，江西中浩建设工程有限公司在员工食堂组织开展了以“情浓端午、粽情粽意”为…
+                                    </div>
+                                </div>
+
+                            </a>
+                        </li>
+                        <% }); %>
+                            <% ("1".repeat(7).split("")).forEach(function(user,index){ %>
+                                <li>
+                                    <a href="/newsdetail">
+                                        <div class="news-title slim">【公司新闻】情浓端午，中浩人的“粽情粽意”</div>
+                                    </a>
+                                </li>
+                                <% }); %>
+                </ul>
+                <div class="pagination">
+                    <a href="">首页</a>
+                    <a href="" class="cur">上一页</a>
+                    <% ("1".repeat(7).split("")).forEach(function(user,index){ %>
+                        <a href="">
+                            <%-index+1%>
+                        </a>
+                        <% }); %>
+                            <a href="">下一页</a>
+                            <a href="">末页</a>
+                            共11页 111条
+                </div>
+            </div>
         </div>
+
     </div>
-<%- include('footer'); -%>    </body>     </html>
+    <%- include('footer'); -%>
+        </body>
+
+        </html>
