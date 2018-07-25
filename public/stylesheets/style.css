@@ -269,6 +269,7 @@ a {
 
 .link-item a {
   color: inherit;
+  text-decoration: underline
 }
 
 .footer .copyright {
