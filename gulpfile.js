@@ -1,6 +1,7 @@
 // 添加引用
 var gulp = require("gulp");
-var ejs = require("gulp-ejs")
+var ejs = require("gulp-ejs");
+const del = require("del");
 var browserSync = require("browser-sync").create();
 var reload = browserSync.reload;
 var nodemon = require("gulp-nodemon");
@@ -15,15 +16,25 @@ gulp.task("node", function() {
     }
   });
 });
+//清除静态文件
+gulp.task("clean", function() {
+  del("public/*.html").then(paths => {
+    console.log("Deleted files and folders:\n", paths.join("\n"));
+  });
+});
 
 //生成静态页面
-gulp.task("build", function() {
+gulp.task("build", ["clean"], function() {
   gulp
     .src("./views/*.ejs")
     .pipe(
-      ejs({
-        msg: "Hello Gulp!"
-      },{}, { ext: '.html' })
+      ejs(
+        {
+          msg: "Hello Gulp!"
+        },
+        {},
+        { ext: ".html" }
+      )
     )
     .pipe(gulp.dest("./public"));
 });

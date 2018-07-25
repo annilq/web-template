@@ -157,7 +157,8 @@ a {
   cursor: pointer;
   background: url("../images/back-up.png") 0 0 no-repeat;
 }
-.share-btns{
+
+.share-btns {
   width: 50px;
   position: fixed;
   left: 0;
@@ -166,7 +167,10 @@ a {
   cursor: pointer;
 }
 
-.share-btns .icon-wechat,.share-btns .icon-pyq,.share-btns .icon-weibo,.share-btns .icon-qzone{
+.share-btns .icon-wechat,
+.share-btns .icon-pyq,
+.share-btns .icon-weibo,
+.share-btns .icon-qzone {
   width: 50px;
   height: 50px;
   background: url("../images/wx.png") 0 0 no-repeat;
@@ -174,15 +178,18 @@ a {
   transition: background 0.6s ease-out 0s
 }
 
-.share-btns .icon-pyq{
+.share-btns .icon-pyq {
   background: url("../images/pyq.png") 0 0 no-repeat;
 }
-.share-btns .icon-weibo{
+
+.share-btns .icon-weibo {
   background: url("../images/wb.png") 0 0 no-repeat;
 }
-.share-btns .icon-qzone{
+
+.share-btns .icon-qzone {
   background: url("../images/kj.png") 0 0 no-repeat;
 }
+
 .social-share a {
   position: relative;
   text-decoration: none;
@@ -229,6 +236,7 @@ a {
   width: 105px;
   margin: 10px auto
 }
+
 .social-share .icon-wechat .wechat-qrcode .help p {
   font-weight: normal;
   line-height: 16px;
@@ -252,6 +260,7 @@ a {
 .social-share .icon-wechat:hover .wechat-qrcode {
   display: block
 }
+
 .link-title {
   color: #fff;
 }
@@ -520,7 +529,8 @@ a {
 .aside-menu li.active {
   background-color: #fafafa;
 }
-.aside-menu li a{
+
+.aside-menu li a {
   display: block
 }
 
@@ -636,6 +646,27 @@ a {
 #book-zoom {
   -ms-transition: -ms-transform 1s;
   transition: transform 1s;
+  position: relative;
+}
+
+#book-zoom .book-left {
+  display: none;
+  width: 22px;
+  height: 615px;
+  top: 0;
+  left: -22px;
+  position: absolute;
+  background: url("../images/book-left.png") 0 0 no-repeat
+}
+
+#book-zoom .book-right {
+  display: none;
+  position: absolute;
+  right: -58px;
+  top: 0;
+  width: 58px;
+  height: 615px;
+  background: url("../images/book-right.png") 0 0 no-repeat
 }
 
 .sj-book {
@@ -922,24 +953,29 @@ a {
 .item-tips {
   padding-left: 10px;
 }
-.hr-invite{
+
+.hr-invite {
   background-color: #fafafa
 }
-.hr-invite .picture-list p{
-	font-size: 16px;
+
+.hr-invite .picture-list p {
+  font-size: 16px;
   color: #5c5c5c;
   line-height: 60px;
 }
-.hr-invite .picture-list li:nth-child(odd){
+
+.hr-invite .picture-list li:nth-child(odd) {
   margin-right: 70px;
 }
-.contact .subpage-content{
+
+.contact .subpage-content {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
   float: none;
 }
-.contact-map{
+
+.contact-map {
   position: relative;
   width: 1062px;
   height: 360px;
@@ -947,7 +983,8 @@ a {
   background: url("../images/lxwm-bg.png") 0 0 no-repeat;
   box-shadow: 0 0 5px 1px #ddd
 }
-.contact-map .address{
+
+.contact-map .address {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -957,13 +994,15 @@ a {
   background-color: rgba(102, 102, 102, 0.8);
   color: #fff;
 }
-.address-content{
+
+.address-content {
   line-height: 40px;
   position: relative;
   width: 400px;
   margin: 0 auto;
 }
-.address-content .qcode{
+
+.address-content .qcode {
   position: absolute;
   bottom: 0;
   right: 0;

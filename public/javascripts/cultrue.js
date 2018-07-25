@@ -66,23 +66,31 @@ $(function(){
       when: {
         turned: function(e, page, view) {
           var book = $(this);
-  
           if (page == 2 || page == 3) {
             book.turn("peel", "br");
           }
+          // $(".book-left,.book-right").show();
           $(".prebtn,.nextbtn").show();
           if (page == 1) {
             $(".prebtn").hide();
+            // $(".book-left,.book-right").hide();
           }
           if (page == 66) {
             $(".nextbtn").hide();
+            // $(".book-left,.book-right").hide();
           }  
+
           $("#slider").slider("value", getViewNumber(book, page));
   
           book.turn("center");
         },
   
         start: function(e, pageObj) {
+          if(pageObj.page== 2&&pageObj.next== 1){
+            $(".book-left,.book-right").hide();
+          }else{
+            $(".book-left,.book-right").show();
+          }
           moveBar(true);
         },
   
