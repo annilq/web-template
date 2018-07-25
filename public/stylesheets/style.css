@@ -886,15 +886,6 @@ a {
   opacity: 0.9;
 }
 
-.load-more {
-  line-height: 40px;
-  background-color: #fafafa;
-  text-align: center;
-  color: #666;
-  margin-top: 30px;
-  cursor: pointer;
-}
-
 /* 企业资质 */
 
 .subpage-qualification-table {
