@@ -7,7 +7,7 @@ $(".back-up").click(function() {
   );
 });
 $("a").click(function(e) {
-  var $tar = $(e.target);
+  var $tar = $(e.currentTarget);
   var href = $tar.attr("href");
   if (href.indexOf("http")<0&&href.indexOf("html")<0) {
     e.preventDefault();

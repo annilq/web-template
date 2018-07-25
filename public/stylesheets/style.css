@@ -350,6 +350,7 @@ a {
   position: relative;
   float: left;
   margin-right: 40px;
+  box-shadow:  0 0 24px #e9e5e5
 }
 
 .news-figure:last-child {
@@ -892,6 +893,7 @@ a {
   /* height: 220px; */
   float: left;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .picture-list li:nth-child(odd) {
@@ -956,6 +958,9 @@ a {
 
 .hr-invite {
   background-color: #fafafa
+}
+.hr-invite .picture-list li{
+  margin-bottom: 0;
 }
 
 .hr-invite .picture-list p {
