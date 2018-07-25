@@ -19,20 +19,33 @@ app.use("/news", function(req, res, next) {
   app.use("/newsdetail", function(req, res, next) {
     res.render("newsdetail");
   });
+  // 业绩工程
   app.use("/projects", function(req, res, next) {
     res.render("projects");
   });
   app.use("/projectsdetail", function(req, res, next) {
     res.render("projectsdetail");
   });
-  app.use("/staff", function(req, res, next) {
-    res.render("staff");
-  });
+  // 企业资质
   app.use("/qualification", function(req, res, next) {
     res.render("qualification");
   });
+  app.use("/certificate", function(req, res, next) {
+    res.render("certificate");
+  });
+  // 员工活动
+  app.use("/staff", function(req, res, next) {
+    res.render("staff");
+  });
+  app.use("/staffdetail", function(req, res, next) {
+    res.render("staffdetail");
+  });
+  // 人力资源
   app.use("/hr", function(req, res, next) {
     res.render("hr");
+  });
+  app.use("/shzp", function(req, res, next) {
+    res.render("shzp");
   });
   app.use("/culture", function(req, res, next) {
     res.render("culture");

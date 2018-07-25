@@ -1,7 +1,45 @@
 <%- include('header'); -%>
-    <div class="banner">
-        <div class="container">
-            hey jude
+    <div class="subpage">
+        <ul class="subpage-banner banner">
+            <li class="banner-item" style="background:url('images/yjgc-banner-2.png') center 0 no-repeat">
+                <img src="images/yjgc-banner-1.png">
+            </li>
+        </ul>
+        <div class="subpage-container container">
+            <div class="aside-menu">
+                <div class="aside-menu-title">员工天地 / Staff World</div>
+                <ul class="aside-menu-list">
+                    <li class="active">员工活动</li>
+                    <li>培训学习</li>
+                    <li>文苑随笔</li>
+                </ul>
+            </div>
+            <div class="subpage-content">
+                <div class="breadcrumb">
+                    员工天地 > 员工活动
+                </div>
+                <div class="subpage-title-container">
+                    <div class="subpage-title">
+                        员工活动
+                    </div>
+                </div>
+                <ul class="picture-list">
+                    <% ("1".repeat(7).split("")).forEach(function(user,index){ %>
+                        <li>
+                            <a href="/staffdetail">
+                                <img src="images/ygtd-active1.png" alt="">
+                                <div class="project-title">龙南里仁镇返迁安置区地下室工程</div>
+                            </a>
+                        </li>
+                        <% }); %>
+
+                </ul>
+                <div class="load-more">加载更多</div>
+            </div>
         </div>
+
     </div>
-<%- include('footer'); -%>    </body>     </html>
+    <%- include('footer'); -%>
+        </body>
+
+        </html>

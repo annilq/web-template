@@ -1,7 +1,48 @@
 <%- include('header'); -%>
-    <div class="banner">
-        <div class="container">
-            hey jude
+    <div class="subpage">
+        <ul class="subpage-banner banner">
+            <li class="banner-item" style="background:url('images/ryzz-banner-2.png') center 0 no-repeat">
+                <img src="images/ryzz-banner-1.png">
+            </li>
+        </ul>
+        <div class="subpage-container container">
+            <div class="aside-menu">
+                <div class="aside-menu-title">荣誉资质 / Honor</div>
+                <ul class="aside-menu-list">
+                    <li class="active">企业资质</li>
+                    <li>荣誉证书</li>
+                </ul>
+            </div>
+            <div class="subpage-content">
+                <div class="breadcrumb">
+                    荣誉资质 > 资质
+                </div>
+                <div class="subpage-title-container">
+                    <div class="subpage-title">
+                        资 质
+                    </div>
+                </div>
+                <table class="subpage-qualification-table" border="none">
+                    <thead>
+                        <tr>
+                            <td>资质名称</td>
+                            <td>资质级别</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% ("1".repeat(7).split("")).forEach(function(user,index){ %>
+                            <tr>
+                                <td>建筑工程施工总承包</td>
+                                <td>一级</td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
     </div>
-<%- include('footer'); -%>    </body>     </html>
+    <%- include('footer'); -%>
+        </body>
+
+        </html>

@@ -4,15 +4,23 @@ body {
 
 ul,
 li,
+table,
+tr,
+td,
+thead,
+tbody,
 p {
   padding: 0;
   margin: 0;
   list-style: none;
+  border: none;
 }
+
 a {
   text-decoration: none;
   color: inherit
 }
+
 .tc {
   text-align: center;
 }
@@ -149,7 +157,101 @@ a {
   cursor: pointer;
   background: url("../images/back-up.png") 0 0 no-repeat;
 }
+.share-btns{
+  width: 50px;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  margin-top: -70px;
+  cursor: pointer;
+}
 
+.share-btns .icon-wechat,.share-btns .icon-pyq,.share-btns .icon-weibo,.share-btns .icon-qzone{
+  width: 50px;
+  height: 50px;
+  background: url("../images/wx.png") 0 0 no-repeat;
+  margin-top: 5px;
+  transition: background 0.6s ease-out 0s
+}
+
+.share-btns .icon-pyq{
+  background: url("../images/pyq.png") 0 0 no-repeat;
+}
+.share-btns .icon-weibo{
+  background: url("../images/wb.png") 0 0 no-repeat;
+}
+.share-btns .icon-qzone{
+  background: url("../images/kj.png") 0 0 no-repeat;
+}
+.social-share a {
+  position: relative;
+  text-decoration: none;
+  margin: 4px;
+  display: inline-block;
+  outline: none
+}
+
+.social-share .icon-wechat .wechat-qrcode {
+  display: none;
+  border: 1px solid #eee;
+  position: absolute;
+  z-index: 9;
+  top: -205px;
+  left: 10px;
+  width: 200px;
+  height: 192px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 10px #aaa;
+  transition: all 200ms;
+  -webkit-tansition: all 350ms;
+}
+
+.social-share .icon-wechat .wechat-qrcode.bottom {
+  top: 40px;
+  left: -84px
+}
+
+.social-share .icon-wechat .wechat-qrcode h4 {
+  font-weight: normal;
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+  color: #777
+}
+
+.social-share .icon-wechat .wechat-qrcode .qrcode {
+  width: 105px;
+  margin: 10px auto
+}
+.social-share .icon-wechat .wechat-qrcode .help p {
+  font-weight: normal;
+  line-height: 16px;
+  padding: 0;
+  margin: 0
+}
+
+.social-share .icon-wechat .wechat-qrcode:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -6px;
+  bottom: -13px;
+  width: 0;
+  height: 0;
+  border-width: 8px 6px 6px 6px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent
+}
+
+.social-share .icon-wechat:hover .wechat-qrcode {
+  display: block
+}
 .link-title {
   color: #fff;
 }
@@ -352,7 +454,7 @@ a {
   content: "";
 }
 
-.qua-item:nth-child(2n + 1) {
+.qua-item:nth-child(2n+1) {
   margin-left: 0;
 }
 
@@ -430,7 +532,7 @@ a {
   width: 732px;
   float: right;
   background-color: #fff;
-  padding: 30px 69px;
+  padding: 30px 69px 40px;
   margin-bottom: 40px;
 }
 
@@ -476,6 +578,7 @@ a {
 .subpage-content-text img {
   margin: 30px 0;
 }
+
 .subpage-content-text img:first-child {
   margin-top: 0;
 }
@@ -483,6 +586,7 @@ a {
 .subpage-content-text p {
   text-indent: 2em;
   line-height: 25px;
+  margin-top: 5px;
 }
 
 /* 关于中浩 */
@@ -499,6 +603,7 @@ a {
   background-size: 100%;
   content: "";
   display: inline-block;
+  margin-right: 4px;
 }
 
 .fzlc {
@@ -676,14 +781,17 @@ a {
   overflow: hidden;
   cursor: pointer;
 }
+
 .news-list li:hover .news-content,
 .news-list li:hover .slim {
   background-color: #fafafa;
 }
+
 .news-list li:hover .news-title {
   color: #ff7c38;
   text-decoration: underline;
 }
+
 .news-list .news-pic {
   float: left;
   width: 340px;
@@ -699,6 +807,7 @@ a {
   line-height: 40px;
   color: #000000;
 }
+
 .slim.news-title {
   font-size: 12px;
 }
@@ -712,6 +821,7 @@ a {
   font-size: 12px;
   color: #a8a8a8;
 }
+
 .subpage-content-date {
   text-align: center;
   line-height: 40px;
@@ -719,43 +829,51 @@ a {
   margin-bottom: -10px;
   margin-top: -10px;
 }
+
 .pagination {
   margin-top: 20px;
   text-align: center;
   color: #999;
 }
+
 .pagination a {
   font-size: 12px;
   color: inherit;
   margin-right: 10px;
   text-decoration: none;
 }
+
 .pagination .cur {
   color: #ff7c38;
 }
-.project-page-list {
+
+.picture-list {
   height: auto;
   overflow: hidden;
 }
-.project-page-list li {
-  width: 352px;
-  height: 220px;
+
+.picture-list li {
+  /* width: 352px; */
+  /* height: 220px; */
   float: left;
   position: relative;
 }
-.project-page-list li:nth-child(odd) {
+
+.picture-list li:nth-child(odd) {
   margin-right: 26px;
 }
-.project-page-list li img {
+
+.picture-list li img {
   display: block
 }
-.project-page-list li .project-title {
+
+.picture-list li .project-title {
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
   font-size: 18px;
-	line-height: 50px;
+  line-height: 50px;
   color: #333333;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -763,11 +881,98 @@ a {
   background-color: rgba(255, 255, 255, 0.9);
   opacity: 0.9;
 }
-.load-more{
+
+.load-more {
   line-height: 40px;
   background-color: #fafafa;
   text-align: center;
   color: #666;
   margin-top: 30px;
   cursor: pointer;
+}
+
+/* 企业资质 */
+
+.subpage-qualification-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.subpage-qualification-table thead {
+  background-color: rgba(255, 124, 56, 0.17)
+}
+
+.subpage-qualification-table thead td {
+  font-size: 14px;
+  color: #a3a0a0;
+}
+
+.subpage-qualification-table td {
+  padding: 0 30px;
+  border: 1px solid #cecece;
+  line-height: 40px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #333333;
+}
+
+.subpage-qualification-table td:nth-child(even) {
+  text-align: center;
+  width: 160px;
+}
+
+/* 人力资源 */
+
+.item-tips {
+  padding-left: 10px;
+}
+.hr-invite{
+  background-color: #fafafa
+}
+.hr-invite .picture-list p{
+	font-size: 16px;
+  color: #5c5c5c;
+  line-height: 60px;
+}
+.hr-invite .picture-list li:nth-child(odd){
+  margin-right: 70px;
+}
+.contact .subpage-content{
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  float: none;
+}
+.contact-map{
+  position: relative;
+  width: 1062px;
+  height: 360px;
+  margin: 0 auto;
+  background: url("../images/lxwm-bg.png") 0 0 no-repeat;
+  box-shadow: 0 0 5px 1px #ddd
+}
+.contact-map .address{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  padding: 60px 0;
+  background-color: rgba(102, 102, 102, 0.8);
+  color: #fff;
+}
+.address-content{
+  line-height: 40px;
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+}
+.address-content .qcode{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 122px;
+  height: 122px;
+  background: url("../images/qr-code.png") 0 0 no-repeat;
 }
