@@ -520,6 +520,9 @@ a {
 .aside-menu li.active {
   background-color: #fafafa;
 }
+.aside-menu li a{
+  display: block
+}
 
 .aside-menu-title {
   padding: 0 20px;
