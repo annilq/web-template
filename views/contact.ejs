@@ -12,7 +12,7 @@
                         联系我们
                     </div>
                 </div>
-                <div class="contact-map">
+                <div class="contact-map" >
                     <div class="address">
                         <div class="address-content">
                             <p> 地址：中国 · 南昌 · 红谷滩新区凤凰中大道926号中洋大厦20楼
@@ -30,12 +30,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="map" id="map"></div>
                 </div>
             </div>
         </div>
 
     </div>
     <%- include('footer'); -%>
-        </body>
-
-        </html>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=LvGLjO3Sb832PyNx2EfzovtglbSIR0Mm" type="text/javascript"></script>
+    <script type="text/javascript">
+        // 百度地图API功能
+        var map = new BMap.Map("map");    // 创建Map实例
+        map.centerAndZoom(new BMap.Point(115.676082,27.757258), 11);  // 初始化地图,设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+        var local = new BMap.LocalSearch(map, {
+		renderOptions:{map: map}
+	});
+	local.search("江西中浩建设工程有限公司");
+    </script>
+    </body>
+    </html>
