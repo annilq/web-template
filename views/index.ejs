@@ -51,29 +51,36 @@
       推动行业进步、引领行业发展,中浩建设愿与社会各界朋友一起，真诚合作，携手共赢，</br>
       共创美好未来！
     </div>
-     <!--元素大于10个才做成两行，平分数目，小于10个的话做一行滚动  -->
+    <!--元素大于10个才做成两行，平分数目，小于10个的话做一行滚动  -->
     <div class="project-list">
       <% [1,2,3,4,5,6,7,8,9,10].forEach(function(user,index){ %>
         <div class="project-figure">
           <img src="images/index-project<%-index+1 %>.png" alt="">
           <div class="project-active">
             <div class="project-title">
-                庐山西海
-                <div class="read-more">
-                    Read More
-                </div>
+              庐山西海
+              <div class="read-more">
+                Read More
+              </div>
 
             </div>
           </div>
         </div>
         <% }); %>
     </div>
-  
+
     <div class="project-list">
       <% [1,2,3,4,5].forEach(function(user,index){ %>
         <div class="project-figure">
           <img src="images/index-project<%-index+1 %>.png" alt="">
-          <div class="project-active"></div>
+          <div class="project-active">
+            <div class="project-title">
+              庐山西海
+              <div class="read-more">
+                Read More
+              </div>
+            </div>
+          </div>
         </div>
         <% }); %>
     </div>
@@ -88,7 +95,7 @@
           dots: true
         });
         $('.project-list').slick({
-          touchMove:false,
+          touchMove: false,
           slidesToShow: 5,
           slidesToScroll: 1,
           autoplay: true,
