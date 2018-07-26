@@ -40,25 +40,24 @@
                             </a>
                         </li>
                         <% }); %>
-                            <% ("1".repeat(7).split("")).forEach(function(user,index){ %>
-                                <li>
+                            <% ("1".repeat(6).split("")).forEach(function(user,index){ %>
+                                <li class="slim">
                                     <a href="newsdetail">
-                                        <div class="news-title slim">【公司新闻】情浓端午，中浩人的“粽情粽意”</div>
+                                        <div class="news-title">【公司新闻】情浓端午，中浩人的“粽情粽意”</div>
+                                        <div class="news-date">2018/01/20</div>
                                     </a>
                                 </li>
                                 <% }); %>
                 </ul>
                 <div class="pagination">
-                    <a href="">首页</a>
                     <a href="" class="cur">上一页</a>
-                    <% ("1".repeat(7).split("")).forEach(function(user,index){ %>
+                    <% ("1".repeat(5).split("")).forEach(function(user,index){ %>
                         <a href="">
                             <%-index+1%>
                         </a>
                         <% }); %>
                             <a href="">下一页</a>
-                            <a href="">末页</a>
-                            共11页 111条
+                            共11页
                 </div>
             </div>
         </div>

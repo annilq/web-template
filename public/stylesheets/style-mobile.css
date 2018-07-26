@@ -1,0 +1,221 @@
+/*mobile styles*/
+/* common styles */
+.back-up,
+.share-btns,
+.logo,
+.email {
+    display: none
+}
+
+.header {
+    height: 45px;
+    padding-top: 0;
+}
+
+.mobile-header {
+    display: block
+}
+
+.section {
+    padding: 20px 0
+}
+
+.pagination a {
+    padding: 0 10px;
+    margin-right: 0;
+}
+
+.section-title {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.section-tips {
+    display: none
+}
+
+.section-title::after {
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    bottom: -5px;
+    width: 20px;
+    height: 2px;
+    background-color: #ff7c38;
+    content: "";
+}
+/* subpages */
+/*二级页面修改 */
+
+.subpage {
+    position: relative;
+}
+
+.subpage-container {
+    margin-top: 0;
+    width: 100%;
+}
+
+.aside-menu {
+    width: auto;
+    margin-right: 0;
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.aside-menu-title {
+    display: none;
+}
+
+.aside-menu-list {
+    text-align: center;
+}
+
+.aside-menu li {
+    line-height: 24px;
+    font-size: 12px;
+    padding: 0 10px;
+    display: inline-block;
+    color: #ff7c38;
+    background: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #ff7c38;
+}
+
+.aside-menu li.active,
+.aside-menu li:hover {
+    background-color: #ff7c38;
+    color: #fff;
+}
+
+.subpage-content {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    ;
+}
+
+.subpage-content .breadcrumb {
+    display: none;
+}
+
+.subpage-title-container {
+    font-size: 16px;
+}
+
+.subpage-title {
+    margin: 5px 0 20px;
+}
+
+.subpage-content-date {
+    margin-bottom: -15px;
+    margin-top: -24px;
+}
+
+.subpage-content-text img {
+    margin: 14px auto
+}
+
+/* news */
+.news-section {
+    padding: 0;
+}
+.news-text {
+    display: none;
+}
+
+.news-list .news-title {
+    line-height: 24px;
+    font-size: 14px;
+}
+/* qualification */
+.qualification {
+    height: 380px;
+}
+
+.qua-item {
+    width: 244px;
+    font-size: 12px;
+    margin-left: 0;
+    line-height: 22px;
+    ;
+}
+
+.qua-content {
+    padding: 15px;
+}
+
+/*  */
+.asidepic {
+    width: 44%;
+}
+
+.asidepic img {
+    margin: 0;
+}
+
+.fzlc {
+    background-image: none;
+}
+
+
+.slim .news-date {
+    font-size: 12px;
+    line-height: 24px;
+    width: 21%
+}
+
+.slim .news-date {
+    text-align: left;
+}
+
+.picture-list li .project-title {
+    line-height: 26px;
+    font-size: 12px;
+}
+
+.subpage-qualification-table td {
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+.hr-invite .picture-list p{
+    line-height: 30px;
+    font-size: 12px;
+}
+.contact-map{
+    width: 96%;
+    margin: 0 auto;
+}
+.contact-map .map,.contact-map .address{
+    width: 100%;
+}
+.contact-map .map{
+    bottom: 50%;
+}
+.contact-map .address{
+    padding: 30px 0;
+    top: 50%;
+}
+.address-content{
+    width: auto;
+    margin: auto;
+    line-height: 20px;
+    font-size: 12px;
+}
+.address .qcode {
+    top: 32px;
+    right: 20px;
+    width: 88px;
+    height: 88px;
+  }
+.address-text{
+    width: 72%;
+}

@@ -28,6 +28,26 @@ a {
 
 .header {
   padding-top: 18px;
+  height: 122px;
+}
+
+.mobile-header {
+  display: none;
+  line-height: 44px;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+  position: relative;
+}
+
+.mobile-menu-icon {
+  background: url("../images/menu.png") 0 0 no-repeat;
+  width: 23px;
+  height: 15px;
+  background-size: 100%;
+  position: absolute;
+  left: 15px;
+  top: 14px;
 }
 
 .header .logo {
@@ -58,6 +78,8 @@ a {
   line-height: 50px;
   margin-top: 18px;
   color: #323233;
+  height: 50px;
+  overflow: hidden;
 }
 
 .menu-item {
@@ -351,7 +373,7 @@ a {
   height: 344px;
   position: relative;
   display: inline-block;
-  margin:0 14px 40px;
+  margin: 0 14px 40px;
   box-shadow: 0 0 24px #e9e5e5
 }
 
@@ -497,7 +519,6 @@ a {
   height: 100%;
   display: block;
   transition: all .7s;
-
 }
 
 .project-figure .project-active {
@@ -509,11 +530,13 @@ a {
   z-index: 99;
   background-color: rgba(255, 255, 255, 0.7);
 }
+
 .project-figure:hover .project-active {
   display: block;
 }
+
 .project-figure:hover img {
-  transform: scale(1.2,1.2);
+  transform: scale(1.2, 1.2);
   transform-origin: center;
 }
 
@@ -545,6 +568,10 @@ a {
   background-color: #f5f5f5;
 }
 
+.subpage-fzlc img {
+  width: 100%;
+}
+
 .subpage-banner {
   /* height: 580px; */
 }
@@ -559,12 +586,12 @@ a {
   color: #333333;
   float: left;
   width: 290px;
-  line-height: 60px;
   margin-right: 40px;
   background-color: #fff;
 }
 
 .aside-menu li {
+  line-height: 60px;
   padding: 0 20px;
   cursor: pointer;
   background: url("../images/more-a.png") 93% center no-repeat;
@@ -635,7 +662,9 @@ a {
 }
 
 .subpage-content-text img {
-  margin: 30px 0;
+  margin: 30px auto;
+  display: block;
+  width: 100%;
 }
 
 .subpage-content-text img:first-child {
@@ -860,10 +889,11 @@ a {
   height: auto;
   overflow: hidden;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .news-list li:hover .news-content,
-.news-list li:hover .slim {
+.news-list li.slim:hover {
   background-color: #fafafa;
 }
 
@@ -874,12 +904,16 @@ a {
 
 .news-list .news-pic {
   float: left;
-  width: 340px;
+  width: 46%;
+}
+
+.news-pic img {
+  width: 100%
 }
 
 .news-list .news-content {
   float: right;
-  width: 380px;
+  width: 51%;
 }
 
 .news-list .news-title {
@@ -888,8 +922,25 @@ a {
   color: #000000;
 }
 
-.slim.news-title {
+.slim {
+  margin-bottom: 0;
+}
+
+.slim .news-title {
   font-size: 12px;
+  width: 80%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  float: left;
+}
+
+.slim .news-date {
+  font-size: 12px;
+  width: 20%;
+  float: left;
+  text-align: right;
+  line-height: 40px;
 }
 
 .news-list .news-date {
@@ -933,7 +984,7 @@ a {
 }
 
 .picture-list li {
-  /* width: 352px; */
+  width: 48%;
   /* height: 220px; */
   float: left;
   position: relative;
@@ -941,17 +992,20 @@ a {
 }
 
 .picture-list li:nth-child(odd) {
-  margin-right: 26px;
+  margin-right: 4%;
 }
 
 .picture-list li img {
-  display: block
+  display: block;
+  width: 100%;
 }
 
 .picture-list li .project-title {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 0 5px;
   text-align: center;
   font-size: 18px;
   line-height: 50px;
@@ -1014,10 +1068,6 @@ a {
   line-height: 60px;
 }
 
-.hr-invite .picture-list li:nth-child(odd) {
-  margin-right: 70px;
-}
-
 .contact .subpage-content {
   width: 100%;
   padding-left: 0;
@@ -1027,7 +1077,7 @@ a {
 
 .contact-map {
   position: relative;
-  width: 1062px;
+  max-width: 1062px;
   height: 360px;
   margin: 0 auto;
   box-shadow: 0 0 5px 1px #ddd
@@ -1057,14 +1107,21 @@ a {
   line-height: 40px;
   position: relative;
   width: 400px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
-.address-content .qcode {
+.address .qcode {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 116px;
+  right: 80px;
   width: 122px;
   height: 122px;
   background: url("../images/qr-code.png") 0 0 no-repeat;
+  background-size: 100%;
+}
+
+.BMap_cpyCtrl,
+.anchorBL {
+  display: none
 }
