@@ -152,7 +152,7 @@ a {
 .footer .links-container {
   float: left;
   padding-bottom: 15px;
-  width: 1000px;
+  max-width: 1000px;
 }
 
 .footer .links-selection {
@@ -285,6 +285,7 @@ a {
 
 .link-title {
   color: #fff;
+  width: 30%;
 }
 
 .link-items {

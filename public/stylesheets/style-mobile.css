@@ -78,7 +78,21 @@
 .menu .menu-item .submenu {
     display: none;
 }
-
+/* footer */
+.footer{
+    padding: 0;
+}
+.link-title{
+    line-height: 50px;
+    padding-left: 20px;
+    float: left;
+}
+.footer .links-selection select{
+    margin-top: 10px;
+}
+.link-items{
+    display: none;
+}
 .section {
     padding: 20px 0
 }
