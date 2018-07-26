@@ -15,4 +15,12 @@ $("a").click(function(e) {
     window.location.href = href + ".html";
   }
 });
-
+window.slideout = new Slideout({
+  panel: document.getElementById("panel"),
+  menu: document.getElementById("menu"),
+  padding:90,
+  tolerance: 70
+});
+$(".mobile-menu-icon").click(function(e) {
+  window.slideout.toggle();
+});

@@ -1,5 +1,7 @@
 /*mobile styles*/
+
 /* common styles */
+
 .back-up,
 .share-btns,
 .logo,
@@ -8,12 +10,73 @@
 }
 
 .header {
-    height: 45px;
-    padding-top: 0;
+    height: 0;
+    padding: 0;
 }
 
 .mobile-header {
     display: block
+}
+
+/* menu */
+
+.slideout-menu {
+    margin-top:0;
+    padding-top: 60px;
+    background-color: #ff7c38;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    min-height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
+    display: none;
+}
+
+.menu .menu-item {
+    float: none;
+    width: 90px;
+    font-size: 12px;
+}
+
+.menu-item::after {
+    border: none;
+}
+.menu-item.active{
+    background-color: rgba(230, 102, 36, 0.6);
+}
+.slideout-menu-left {
+    left: 0;
+}
+
+.slideout-menu-right {
+    right: 0;
+}
+
+.slideout-panel {
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    background-color: #FFF;
+    /* A background-color is required */
+    min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+    overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+    display: block;
+}
+
+.menu .menu-item .submenu {
+    display: none;
 }
 
 .section {
@@ -47,7 +110,9 @@
     background-color: #ff7c38;
     content: "";
 }
+
 /* subpages */
+
 /*二级页面修改 */
 
 .subpage {
@@ -124,9 +189,11 @@
 }
 
 /* news */
+
 .news-section {
     padding: 0;
 }
+
 .news-text {
     display: none;
 }
@@ -135,7 +202,9 @@
     line-height: 24px;
     font-size: 14px;
 }
+
 /* qualification */
+
 .qualification {
     height: 380px;
 }
@@ -153,6 +222,7 @@
 }
 
 /*  */
+
 .asidepic {
     width: 44%;
 }
@@ -164,7 +234,6 @@
 .fzlc {
     background-image: none;
 }
-
 
 .slim .news-date {
     font-size: 12px;
@@ -186,36 +255,45 @@
     font-size: 12px;
     padding: 0 10px;
 }
-.hr-invite .picture-list p{
+
+.hr-invite .picture-list p {
     line-height: 30px;
     font-size: 12px;
 }
-.contact-map{
+
+.contact-map {
     width: 96%;
     margin: 0 auto;
 }
-.contact-map .map,.contact-map .address{
+
+.contact-map .map,
+.contact-map .address {
     width: 100%;
 }
-.contact-map .map{
+
+.contact-map .map {
     bottom: 50%;
 }
-.contact-map .address{
+
+.contact-map .address {
     padding: 30px 0;
     top: 50%;
 }
-.address-content{
+
+.address-content {
     width: auto;
     margin: auto;
     line-height: 20px;
     font-size: 12px;
 }
+
 .address .qcode {
     top: 32px;
     right: 20px;
     width: 88px;
     height: 88px;
-  }
-.address-text{
+}
+
+.address-text {
     width: 72%;
 }
