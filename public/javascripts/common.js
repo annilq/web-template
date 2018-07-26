@@ -9,7 +9,8 @@ $(".back-up").click(function() {
 $("a").click(function(e) {
   var $tar = $(e.currentTarget);
   var href = $tar.attr("href");
-  if (href.indexOf("http")<0&&href.indexOf("html")<0) {
+  var protocol=window.location.protocol;
+  if (href.indexOf("html")<0&&protocol.indexOf("http")<0) {
     e.preventDefault();
     window.location.href = href + ".html";
   }

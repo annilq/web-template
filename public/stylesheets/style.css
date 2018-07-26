@@ -1,5 +1,6 @@
 body {
   font: 14px "MicrosoftYaHei", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 ul,
@@ -26,7 +27,6 @@ a {
 }
 
 .header {
-  height: 122px;
   padding-top: 18px;
 }
 
@@ -55,7 +55,6 @@ a {
 }
 
 .menu {
-  height: 50px;
   line-height: 50px;
   margin-top: 18px;
   color: #323233;
@@ -113,7 +112,8 @@ a {
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   overflow: hidden;
   margin: 0 auto;
   position: relative;
@@ -308,12 +308,13 @@ a {
 }
 
 .banner {
-  height: 630px;
+  /* height: 630px; */
   overflow: hidden;
 }
 
 .banner-item img {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   display: block;
   margin: 0 auto;
 }
@@ -342,14 +343,15 @@ a {
   padding: 0 20px 17px;
   overflow: hidden;
   height: auto;
+  text-align: center;
 }
 
 .news-figure {
-  width: 360px;
+  max-width: 360px;
   height: 344px;
   position: relative;
-  float: left;
-  margin-right: 40px;
+  display: inline-block;
+  margin:0 14px 40px;
   box-shadow: 0 0 24px #e9e5e5
 }
 
@@ -368,6 +370,7 @@ a {
 }
 
 .news-figure p {
+  text-align: left;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -402,7 +405,7 @@ a {
   font-size: 18px;
   letter-spacing: 2px;
   color: #ff7c38;
-  margin: 40px auto 0;
+  margin: 0 auto;
   display: block;
   text-decoration: none;
 }
@@ -412,11 +415,10 @@ a {
 .qualification {
   height: 530px;
   position: relative;
-  background-color: #24e62e;
 }
 
 .qua-content {
-  width: 768px;
+  max-width: 768px;
   padding: 30px 60px;
   position: absolute;
   top: 50%;
@@ -440,7 +442,6 @@ a {
 
 .qua-item {
   width: 276px;
-  height: 35px;
   line-height: 35px;
   float: left;
   font-size: 18px;
@@ -545,7 +546,7 @@ a {
 }
 
 .subpage-banner {
-  height: 580px;
+  /* height: 580px; */
 }
 
 .subpage-container {
@@ -990,7 +991,7 @@ a {
 
 .subpage-qualification-table td:nth-child(even) {
   text-align: center;
-  width: 160px;
+  width: 30%;
 }
 
 /* 人力资源 */
