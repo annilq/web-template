@@ -19,6 +19,7 @@ window.slideout = new Slideout({
   panel: document.getElementById("panel"),
   menu: document.getElementById("menu"),
   padding:90,
+  touch:false,
   tolerance: 70
 });
 $(".mobile-menu-icon").click(function(e) {

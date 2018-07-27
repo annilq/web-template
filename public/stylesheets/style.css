@@ -511,7 +511,7 @@ a {
 .project-figure {
   position: relative;
   width: 20%;
-  float: left;
+  display: inline-block;
   overflow: hidden;
 }
 
@@ -707,7 +707,6 @@ a {
 }
 
 .culture-container .container {
-  /* background: url("../images/111.jpg") center 0 no-repeat; */
   background: url("../images/culture-bg.jpg") center 0 no-repeat;
   height: 856px;
 }
@@ -745,8 +744,8 @@ a {
 }
 
 .sj-book {
-  width: 906px;
-  height: 615px;
+  max-width: 906px;
+  max-height: 615px;
 }
 
 .animated {
@@ -862,7 +861,13 @@ a {
   margin-left: -40px;
   margin-top: -1px;
 }
-
+.culture-pagation{
+  display: none;
+  text-align: center;
+  color: #5c5955;
+  font-size: 12px;
+  line-height: 40px;
+}
 /* Interaction states
 ----------------------------------*/
 

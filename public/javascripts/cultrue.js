@@ -69,119 +69,129 @@ function isChrome() {
 
   return navigator.userAgent.indexOf("Chrome") != -1;
 }
-$(function() {
-  function loadApp() {
-    var flipbook = $(".sj-book");
-    // URIs
-    Hash.on("^page/([0-9]*)$", {
-      yep: function(path, parts) {
-        var page = parts[1];
+function loadApp() {
+  var flipbook = $(".sj-book");
+  // URIs
+  Hash.on("^page/([0-9]*)$", {
+    yep: function(path, parts) {
+      var page = parts[1];
 
-        if (page !== undefined) {
-          if ($(".sj-book").turn("is")) $(".sj-book").turn("page", page);
+      if (page !== undefined) {
+        if ($(".sj-book").turn("is")) $(".sj-book").turn("page", page);
+      }
+    },
+    nop: function(path) {
+      if ($(".sj-book").turn("is")) $(".sj-book").turn("page", 1);
+    }
+  });
+  // Flipbook
+
+  flipbook.turn({
+    acceleration: !isChrome(),
+    autoCenter: true,
+    duration: 1000,
+    pages: 66,
+    when: {
+      turned: function(e, page, view) {
+        var book = $(this);
+        if (page == 2 || page == 3) {
+          book.turn("peel", "br");
+        }
+        // $(".book-left,.book-right").show();
+        $(".prebtn,.nextbtn").show();
+        if (page == 1) {
+          $(".prebtn").hide();
+          // $(".book-left,.book-right").hide();
+        }
+        if (page == 66) {
+          $(".nextbtn").hide();
+          // $(".book-left,.book-right").hide();
+        }
+
+        $("#slider").slider("value", getViewNumber(book, page));
+
+        book.turn("center");
+      },
+      turning: function(event, page, view) {
+        if (page == 1 || page == 66) {
+          $(".book-left,.book-right").hide();
+        } else {
+          $(".book-left,.book-right").show();
         }
       },
-      nop: function(path) {
-        if ($(".sj-book").turn("is")) $(".sj-book").turn("page", 1);
-      }
-    });
-    // Flipbook
+      start: function(e, pageObj) {
+        moveBar(true);
+      },
 
-    flipbook.turn({
-      acceleration: !isChrome(),
-      autoCenter: true,
-      duration: 1000,
-      pages: 66,
-      when: {
-        turned: function(e, page, view) {
-          var book = $(this);
-          if (page == 2 || page == 3) {
-            book.turn("peel", "br");
-          }
-          // $(".book-left,.book-right").show();
-          $(".prebtn,.nextbtn").show();
-          if (page == 1) {
-            $(".prebtn").hide();
-            // $(".book-left,.book-right").hide();
-          }
-          if (page == 66) {
-            $(".nextbtn").hide();
-            // $(".book-left,.book-right").hide();
-          }
+      end: function(e, pageObj) {
+        var book = $(this);
 
-          $("#slider").slider("value", getViewNumber(book, page));
-
-          book.turn("center");
-        },
-        turning: function(event, page, view) {
-          if (page == 1 || page == 66) {
-            $(".book-left,.book-right").hide();
-          } else {
-            $(".book-left,.book-right").show();
-          }
-        },
-        start: function(e, pageObj) {
-          moveBar(true);
-        },
-
-        end: function(e, pageObj) {
-          var book = $(this);
-
-          setTimeout(function() {
-            $("#slider").slider("value", getViewNumber(book));
-          }, 1);
-
-          moveBar(false);
-        },
-        missing: function(e, pages) {
-          for (var i = 0; i < pages.length; i++) {
-            addPage(pages[i], $(this));
-          }
-        }
-      }
-    });
-    $(".prebtn").click(function() {
-      flipbook.turn("previous");
-    });
-    $(".nextbtn").click(function() {
-      flipbook.turn("next");
-    });
-
-    $("#slider").slider({
-      min: 0,
-      max: 65,
-      start: function(event, ui) {
-        if (!window._thumbPreview) {
-          _thumbPreview = $("<div />", {
-            class: "thumbnail"
-          }).html("<div></div>");
-          setPreview(ui.value);
-          _thumbPreview.appendTo($(ui.handle));
-        } else setPreview(ui.value);
+        setTimeout(function() {
+          $("#slider").slider("value", getViewNumber(book));
+        }, 1);
 
         moveBar(false);
       },
-
-      slide: function(event, ui) {
-        setPreview(ui.value);
-      },
-      stop: function() {
-        if (window._thumbPreview) _thumbPreview.removeClass("show");
-        $(".sj-book").turn("page", Math.max(1, $(this).slider("value") + 1));
+      missing: function(e, pages) {
+        for (var i = 0; i < pages.length; i++) {
+          addPage(pages[i], $(this));
+        }
       }
-    });
-
-    flipbook.addClass("animated");
-
-    // Show canvas
-
-    $("#canvas").css({
-      visibility: ""
-    });
-  }
-
-  $("#canvas").css({
-    visibility: "hidden"
+    }
   });
+  $(".prebtn").click(function() {
+    flipbook.turn("previous");
+  });
+  $(".nextbtn").click(function() {
+    flipbook.turn("next");
+  });
+
+  $("#slider").slider({
+    min: 0,
+    max: 65,
+    start: function(event, ui) {
+      if (!window._thumbPreview) {
+        _thumbPreview = $("<div />", {
+          class: "thumbnail"
+        }).html("<div></div>");
+        setPreview(ui.value);
+        _thumbPreview.appendTo($(ui.handle));
+      } else setPreview(ui.value);
+
+      moveBar(false);
+    },
+
+    slide: function(event, ui) {
+      setPreview(ui.value);
+    },
+    stop: function() {
+      if (window._thumbPreview) _thumbPreview.removeClass("show");
+      $(".sj-book").turn("page", Math.max(1, $(this).slider("value") + 1));
+    }
+  });
+
+  flipbook.addClass("animated");
+}
+
+if (navigator.userAgent.indexOf("Mobile") < 0) {
   loadApp();
-});
+} else {
+  $("#panel").css({ background: "url('../images/bg.png') 0 0" });
+  $(".sj-book").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: false,
+    lazyLoad: "ondemand",
+    centerMode: true
+  });
+  $(".sj-book").on("afterChange", function(event, slick, currentSlide) {
+    $(".culture-current-page").text(currentSlide);
+    $(".culture-pagation select")[0].value = currentSlide;
+    // left
+  });
+  $(".culture-pagation select").change(function(e) {
+    var num = parseInt(e.currentTarget.value, 10);
+    $(".sj-book").slick("slickGoTo", num);
+    $(".culture-current-page").text(num);
+  });
+}
