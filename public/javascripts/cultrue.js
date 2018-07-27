@@ -172,10 +172,16 @@ function loadApp() {
 
   flipbook.addClass("animated");
 }
-
+// 如果是pc端
 if (navigator.userAgent.indexOf("Mobile") < 0) {
+  // 将企业画册的scr重新复制
+  $(".sj-book img").each(function(index,img){
+    var src=$(img).attr("data-lazy");    
+    img.src=$(img).attr("data-lazy");
+  })
   loadApp();
 } else {
+  // 如果是移动端
   $("#panel").css({ background: "url('../images/bg.png') 0 0" });
   $(".sj-book").slick({
     slidesToShow: 1,
@@ -187,6 +193,7 @@ if (navigator.userAgent.indexOf("Mobile") < 0) {
   $(".sj-book").on("afterChange", function(event, slick, currentSlide) {
     $(".culture-current-page").text(currentSlide);
     $(".culture-pagation select")[0].value = currentSlide;
+    nextpagehandle(currentSlide);
     // left
   });
   $(".culture-pagation select").change(function(e) {
@@ -194,4 +201,16 @@ if (navigator.userAgent.indexOf("Mobile") < 0) {
     $(".sj-book").slick("slickGoTo", num);
     $(".culture-current-page").text(num);
   });
+  function nextpagehandle(currentSlide) {
+    var length = $(".slick-slide").length;
+    if (length - currentSlide < 3) {
+      var src="images/album/"+length+".png"
+      $(".sj-book").slick(
+        "slickAdd",
+        "<div data-picid=" +
+          length +
+          "><img src="+src+" /></div>"
+      );
+    }
+  }
 }

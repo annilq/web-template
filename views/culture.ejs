@@ -12,7 +12,7 @@
                         <div class="sj-book">
                             <% ("1".repeat(66).split("")).forEach(function(user,index){ %>
                                 <div data-picid="<%-index%>">
-                                    <!-- <img src="images/album/<%-index %>.png" data-lazy="images/album/<%-index %>.png" alt=""> -->
+                                    <!-- <img src="images/album/<%-index %>.png" alt=""> -->
                                     <img data-lazy="images/album/<%-index %>.png" alt="">
                                 </div>
                                 <% }); %>
@@ -26,7 +26,8 @@
                 <div id="slider-bar" class="turnjs-slider">
                     <div id="slider"></div>
                 </div>
-                <div class="culture-pagation">第 <span class="culture-current-page">0</span> 页，共65页 跳转至
+                <div class="culture-pagation">第
+                    <span class="culture-current-page">0</span> 页，共65页 跳转至
                     <select>
                         <% ("1".repeat(66).split("")).forEach(function(user,index){ %>
                             <option value="<%-index%>">
