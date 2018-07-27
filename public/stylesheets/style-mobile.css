@@ -325,7 +325,7 @@
 }
 .culture-album{
     width: 100%;
-    height: 370px;
+    height: auto;
     margin-top: 30px;
 }
 .sj-book{
@@ -334,16 +334,18 @@
 .slick-slide img{
     margin: 0 auto;
     max-width: 100%;
-}
-.slick-initialized .slick-slide{
-    margin: 0 10px;
     box-shadow: 0px 0px 10px 0px #aaaaaa;
     border-radius: 8px;
     overflow: hidden;
+
+}
+.slick-initialized .slick-slide{
+    margin: 0 10px;
 }
 .turnjs-slider{
     width: 90%;
     margin-bottom: 0;
+    margin-top: 20px;
 }
 #slider{
     width: 20px;
