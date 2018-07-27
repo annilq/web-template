@@ -94,12 +94,22 @@
         $('.banner').slick({
           dots: true
         });
-        $('.project-list').slick({
+        var slickOptions = {
           touchMove: false,
           slidesToShow: 5,
           slidesToScroll: 1,
           autoplay: true,
           autoplaySpeed: 2000,
+        };
+        $projects=$('.project-list');
+        $projects.slick(slickOptions);
+        enquire.register("screen and (max-width: 1000px)", {
+          match: function () {
+            $projects.slick("unslick")
+          },
+          unmatch: function () {
+            $projects.slick(slickOptions);
+          }
         });
       })
     </script>

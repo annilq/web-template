@@ -1,0 +1,359 @@
+/*mobile styles*/
+
+/* common styles */
+
+.back-up,
+.share-btns,
+.logo,
+.email {
+    display: none
+}
+
+.header {
+    height: 0;
+    padding: 0;
+}
+
+.mobile-header {
+    display: block
+}
+
+/* menu */
+
+.slideout-menu {
+    margin-top:0;
+    padding-top: 60px;
+    background-color: #ff7c38;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    min-height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
+    display: none;
+}
+.slideout-menu::-webkit-scrollbar {
+    display: none;
+  }
+.menu .menu-item {
+    float: none;
+    width: 90px;
+    font-size: 12px;
+}
+
+.menu-item::after {
+    border: none;
+}
+.menu-item.active{
+    background-color: rgba(230, 102, 36, 0.6);
+}
+.slideout-menu-left {
+    left: 0;
+}
+
+.slideout-menu-right {
+    right: 0;
+}
+
+.slideout-panel {
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    background-color: #FFF;
+    /* A background-color is required */
+    min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+    overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+    display: block;
+}
+
+.menu .menu-item .submenu {
+    display: none;
+}
+/* footer */
+.footer{
+    padding: 0;
+}
+.link-title{
+    line-height: 50px;
+    padding-left: 20px;
+    float: left;
+}
+.footer .links-selection select{
+    margin-top: 10px;
+}
+.link-items{
+    display: none;
+}
+.section {
+    padding: 20px 0
+}
+
+.pagination a {
+    padding: 0 10px;
+    margin-right: 0;
+}
+
+.section-title {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.section-tips {
+    display: none
+}
+
+.section-title::after {
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    bottom: -5px;
+    width: 20px;
+    height: 2px;
+    background-color: #ff7c38;
+    content: "";
+}
+.project-figure{
+    width: 50%;
+}
+/* subpages */
+
+/*二级页面修改 */
+
+.subpage {
+    position: relative;
+}
+
+.subpage-container {
+    margin-top: 0;
+    width: 100%;
+}
+
+.aside-menu {
+    width: auto;
+    margin-right: 0;
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.aside-menu-title {
+    display: none;
+}
+
+.aside-menu-list {
+    text-align: center;
+}
+
+.aside-menu li {
+    line-height: 24px;
+    font-size: 12px;
+    padding: 0 10px;
+    display: inline-block;
+    color: #ff7c38;
+    background: #ffffff;
+    border-radius: 4px;
+    border: solid 1px #ff7c38;
+}
+
+.aside-menu li.active,
+.aside-menu li:hover {
+    background-color: #ff7c38;
+    color: #fff;
+}
+
+.subpage-content {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    ;
+}
+
+.subpage-content .breadcrumb {
+    display: none;
+}
+
+.subpage-title-container {
+    font-size: 16px;
+}
+
+.subpage-title {
+    margin: 5px 0 20px;
+}
+
+.subpage-content-date {
+    margin-bottom: -15px;
+    margin-top: -24px;
+}
+
+.subpage-content-text img {
+    margin: 14px auto
+}
+
+/* news */
+
+.news-section {
+    padding: 0;
+}
+
+.news-text {
+    display: none;
+}
+
+.news-list .news-title {
+    line-height: 24px;
+    font-size: 14px;
+}
+
+/* qualification */
+
+.qualification {
+    height: 380px;
+}
+
+.qua-item {
+    width: 244px;
+    font-size: 12px;
+    margin-left: 0;
+    line-height: 22px;
+    ;
+}
+
+.qua-content {
+    padding: 15px;
+}
+
+/*  */
+
+.asidepic {
+    width: 44%;
+}
+
+.asidepic img {
+    margin: 0;
+}
+
+.fzlc {
+    background-image: none;
+}
+
+.slim .news-date {
+    font-size: 12px;
+    line-height: 24px;
+    width: 21%
+}
+
+.slim .news-date {
+    text-align: left;
+}
+
+.picture-list li .project-title {
+    line-height: 26px;
+    font-size: 12px;
+}
+
+.subpage-qualification-table td {
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.hr-invite .picture-list p {
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.contact-map {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.contact-map .map,
+.contact-map .address {
+    width: 100%;
+}
+
+.contact-map .map {
+    bottom: 50%;
+}
+
+.contact-map .address {
+    padding: 30px 0;
+    top: 50%;
+}
+
+.address-content {
+    width: auto;
+    margin: auto;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.address .qcode {
+    top: 32px;
+    right: 20px;
+    width: 88px;
+    height: 88px;
+}
+
+.address-text {
+    width: 72%;
+}
+/* 画册 */
+.culture-container{
+    background: none;
+}
+.culture-container .container{
+    height: auto;
+    background: none;
+}
+.culture-album{
+    width: 100%;
+    height: 370px;
+    margin-top: 30px;
+}
+.sj-book{
+    width: 100%;
+}
+.slick-slide img{
+    margin: 0 auto;
+    max-width: 100%;
+}
+.slick-initialized .slick-slide{
+    margin: 0 10px;
+    box-shadow: 0px 0px 10px 0px #aaaaaa;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.turnjs-slider{
+    width: 90%;
+    margin-bottom: 0;
+}
+#slider{
+    width: 20px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.prebtn,.nextbtn{
+    display: none
+}
+.culture-pagation{
+    display: block;
+}
