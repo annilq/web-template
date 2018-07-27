@@ -12,8 +12,8 @@ function moveBar(yes) {
 
 function setPreview(view) {
   var previewWidth = 60,
-    previewHeight = 73,
-    previewSrc = "images/album/" + view + ".png",
+    previewHeight = 81,
+    previewSrc = "images/album/s_album.png",
     preview = $(_thumbPreview.children(":first")),
     width = previewWidth;
   _thumbPreview.addClass("no-transition").css({
@@ -24,6 +24,7 @@ function setPreview(view) {
   preview.css({
     width: width,
     height: previewHeight,
+    backgroundPosition:"0 "+(-previewHeight*view)+"px",
     backgroundSize: "100%"
   });
   preview.css({ backgroundImage: "url(" + previewSrc + ")" });
