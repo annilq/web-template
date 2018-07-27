@@ -19,8 +19,11 @@
 }
 
 /* menu */
-
+.menu {
+    opacity: 0;
+}
 .slideout-menu {
+    opacity: 1;
     margin-top:0;
     padding-top: 60px;
     background-color: #ff7c38;
@@ -331,7 +334,7 @@
 .sj-book{
     width: 100%;
 }
-.slick-slide img{
+.sj-book .slick-slide img{
     margin: 0 auto;
     max-width: 100%;
     box-shadow: 0px 0px 10px 0px #aaaaaa;
