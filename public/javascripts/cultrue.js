@@ -1,3 +1,32 @@
+function loadPage(page) {
+  // $.ajax({ url: "images/album/" + page + ".png" }).done(function(pagePic) {
+  //   $(".sj-book .p" + page).html(pagePic);
+  // });
+  $("<img />")
+    .load(function() {
+      $(".sj-book .p" + page).append(this);
+    })
+    .error(function() {
+      // notify the user that the image could not be loaded
+    })
+    .attr("src", "images/album/" + page + ".png");
+}
+
+function addPage(page, book) {
+  var id,
+    pages = book.turn("pages");
+
+  if (!book.turn("hasPage", page)) {
+    var element = $("<div />", {
+      class: "own-size",
+      css: { width: 453, height: 615 }
+    }).html('<div class="loader"></div>');
+
+    if (book.turn("addPage", element, page)) {
+      loadPage(page);
+    }
+  }
+}
 function numberOfViews(book) {
   return book.turn("pages");
 }
@@ -24,7 +53,7 @@ function setPreview(view) {
   preview.css({
     width: width,
     height: previewHeight,
-    backgroundPosition:"0 "+(-previewHeight*view)+"px",
+    backgroundPosition: "0 " + -previewHeight * view + "px",
     backgroundSize: "100%"
   });
   preview.css({ backgroundImage: "url(" + previewSrc + ")" });
@@ -103,6 +132,11 @@ $(function() {
           }, 1);
 
           moveBar(false);
+        },
+        missing: function(e, pages) {
+          for (var i = 0; i < pages.length; i++) {
+            addPage(pages[i], $(this));
+          }
         }
       }
     });
