@@ -126,7 +126,9 @@
     background-color: #ff7c38;
     content: "";
 }
-
+.project-figure{
+    width: 50%;
+}
 /* subpages */
 
 /*二级页面修改 */
