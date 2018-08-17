@@ -26,7 +26,7 @@
     opacity: 1;
     margin-top:0;
     padding-top: 60px;
-    background-color: #ff7c38;
+    background-color: #0a62be;
     color: #fff;
     position: fixed;
     top: 0;
@@ -50,8 +50,11 @@
 .menu-item::after {
     border: none;
 }
+.menu-item a:hover::after{
+    content: none;
+}
 .menu-item.active{
-    background-color: rgba(230, 102, 36, 0.6);
+    background-color: #0a55a4;
 }
 .slideout-menu-left {
     left: 0;
@@ -92,9 +95,6 @@
     padding-left: 20px;
     float: left;
 }
-.footer .links-selection select{
-    margin-top: 10px;
-}
 .link-items{
     display: none;
 }
@@ -126,7 +126,7 @@
     bottom: -5px;
     width: 20px;
     height: 2px;
-    background-color: #ff7c38;
+    background-color: #0a62be;
     content: "";
 }
 .project-figure{
@@ -168,15 +168,15 @@
     font-size: 12px;
     padding: 0 10px;
     display: inline-block;
-    color: #ff7c38;
+    color: #0a62be;
     background: #ffffff;
     border-radius: 4px;
-    border: solid 1px #ff7c38;
+    border: solid 1px #0a62be;
 }
 
 .aside-menu li.active,
 .aside-menu li:hover {
-    background-color: #ff7c38;
+    background-color: #0a62be;
     color: #fff;
 }
 
@@ -211,7 +211,7 @@
 
 /* news */
 
-.news-section {
+.news-list {
     padding: 0;
 }
 
@@ -343,7 +343,6 @@
 
 }
 .slick-initialized .slick-slide{
-    margin: 0 10px;
 }
 .turnjs-slider{
     width: 90%;
