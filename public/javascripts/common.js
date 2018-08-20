@@ -54,11 +54,12 @@ $(".sub-menu-container").hover(
     $(e.currentTarget).hide();
   }
 ); // 底部footer事件
-$(".link-items .link-item,[data-submenu]").hover(
+$(".link-items .link-item").hover(
   function(e) {
     clearTimeout(window.timer);
     var $target = $(e.currentTarget);
     var menuId = $target.data("menuid");
+    $("[data-submenu]").hide();
     $("[data-submenu=" + menuId + "]").show();
   },
   function(e) {
