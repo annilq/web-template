@@ -27,8 +27,17 @@ a {
 }
 
 .header {
+  height: 140px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.top-part {
   padding-top: 18px;
-  height: 103px;
+  background-color: #fff;
 }
 
 .mobile-header {
@@ -54,6 +63,7 @@ a {
   width: 176px;
   height: 54px;
   background: url("../images/logo.png") 0 0 no-repeat;
+  margin-bottom: -20px;
 }
 
 .header .email {
@@ -95,33 +105,47 @@ a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
-
 }
 
 .menu-item a:hover::after {
   position: absolute;
   content: "";
   height: 3px;
-  background-color:#0054ab;
+  background-color: #0054ab;
   left: 0;
   right: 0;
   bottom: -16px;
 }
 
-.submenu {
-  line-height: 34px;
-  color: #fff;
-  background-color: #0a62be;
-  z-index: 9;
+.sub-menu-container {
+  line-height: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, .6);
   display: none;
+}
+
+.sub-menu-container .submenu {
+  position: absolute;
+}
+
+.submenu {
+  z-index: 9;
+}
+
+.submenu li {
+  display: inline-block;
+  margin-right: 22px;
+  z-index: 9;
+}
+
+.submenu li::before {
+  content: "·";
+  font-weight: bold;
 }
 
 .submenu li:hover {
   color: #0054ab;
-}
-
-.menu-item:hover .submenu {
-  display: block;
+  text-decoration: underline;
 }
 
 .container {
@@ -138,17 +162,29 @@ a {
   padding-top: 40px;
   background-color: #fff;
   font-size: 12px;
+  border-top: 6px solid #0a62be
 }
-
-
+.footer .container{
+  overflow: inherit
+}
+.footer .container:before,.footer .container:after{
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  display: table;
+  content: "";
+}
 .link-title {
   color: #323232;
   width: 30%;
   font-size: 14px;
 }
-.link-container{
-  margin: 15px auto;
+
+.link-container {
+  width: 1060px;
+  margin: 15px 0;
   border: 1px solid #e0e0e0;
+  float: left;
 }
 .link-items {
   line-height: 40px;
@@ -160,11 +196,40 @@ a {
 .link-item {
   float: left;
   width: 25%;
-  text-align: center
+  text-align: center;
+  cursor: pointer;
 }
 
-.link-item a {
-  color: inherit;
+.link-item:hover {
+  background-color: #85c8ed;
+}
+
+.link-item::after {
+  content: "";
+  width: 8px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url("../images/more.png") 0 center no-repeat;
+}
+
+.link-items-container {
+  overflow: hidden;
+  height: auto;
+  padding: 10px 30px;
+  margin-bottom: -15px;
+  background-color: #fffef6;
+  position: absolute;
+  bottom: 0;
+  width: 1000px;
+  display: none;
+}
+
+.sub-link-item {
+  width: 24%;
+  margin-left: 1%;
+  float: left;
+  line-height: 40px;
 }
 
 .footer .copyright {
@@ -174,6 +239,7 @@ a {
   color: #192028;
   font-size: 12px;
 }
+
 .back-up {
   position: fixed;
   right: 50px;
@@ -183,7 +249,13 @@ a {
   cursor: pointer;
   background: url("../images/back-up.png") 0 0 no-repeat;
 }
-
+.qcode{
+  float: right;
+  width: 93px;
+  height: 76px;
+  margin-top:-18px;
+  background: url("../images/gfwx.png") 0 0 no-repeat;
+}
 .share-btns {
   width: 50px;
   position: fixed;
@@ -287,7 +359,6 @@ a {
   display: block
 }
 
-
 /* common styles end */
 
 .slick-dots {
@@ -319,6 +390,7 @@ a {
 }
 
 /* 新闻中心 */
+
 .section-title {
   font-size: 56px;
   line-height: 1;
@@ -333,13 +405,11 @@ a {
   margin-top: 20px;
   margin-bottom: 50px;
 }
-.news-section{
+
+.news-section {
   background-color: #fafafa
 }
-.news-list {
-  padding: 0 20px 17px;
-  overflow: hidden;
-  height: auto;
+.news-section .news-list{
   text-align: center;
 }
 
@@ -545,7 +615,9 @@ a {
 }
 
 .subpage-fzlc img {
-  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 .subpage-banner {
@@ -561,8 +633,8 @@ a {
   font-size: 18px;
   color: #333333;
   float: left;
-  width: 290px;
-  margin-right: 40px;
+  width: 200px;
+  margin-right: 20px;
   background-color: #fff;
 }
 
@@ -586,15 +658,14 @@ a {
   padding: 0 20px;
   line-height: 80px;
   color: #f5f5f5;
-  font-size: 24px;
   background-color: #0a62be;
 }
 
 .subpage-content {
-  width: 732px;
+  width: 900px;
   float: right;
   background-color: #fff;
-  padding: 30px 69px 40px;
+  padding: 30px 40px 40px;
   margin-bottom: 40px;
 }
 
@@ -640,7 +711,7 @@ a {
 .subpage-content-text img {
   margin: 30px auto;
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 .subpage-content-text img:first-child {
@@ -837,13 +908,15 @@ a {
   margin-left: -40px;
   margin-top: -1px;
 }
-.culture-pagation{
+
+.culture-pagation {
   display: none;
   text-align: center;
   color: #5c5955;
   font-size: 12px;
   line-height: 40px;
 }
+
 /* Interaction states
 ----------------------------------*/
 
@@ -865,7 +938,11 @@ a {
 }
 
 /* 新闻中心 */
-
+.news-list {
+  padding: 0 20px 17px;
+  overflow: hidden;
+  height: auto;
+}
 .news-list li {
   position: relative;
   height: auto;
@@ -959,7 +1036,24 @@ a {
 .pagination .cur {
   color: #0a62be;
 }
-
+.pre-next-btn{
+  margin-top: 20px;
+  text-align: center;
+}
+.pre-btn,.next-btn{
+  display: inline-block;
+  margin-right: 50px;
+  line-height: 38px;
+  width: 111px;
+  text-align: center;
+  color: #646464;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+.pre-btn.disable,.next-btn.disable{
+  color: rgba(100, 100, 100, .3);
+  background-color:rgba(240, 240, 240, .3);
+}
 .picture-list {
   height: auto;
   overflow: hidden;
@@ -1008,7 +1102,8 @@ a {
 }
 
 .subpage-qualification-table thead {
-  background-color: rgba(255, 124, 56, 0.17)
+  border-top: 4px solid #0054ab;
+  background-color: #fcfcfc;
 }
 
 .subpage-qualification-table thead td {
@@ -1018,7 +1113,7 @@ a {
 
 .subpage-qualification-table td {
   padding: 0 30px;
-  border: 1px solid #cecece;
+  border: 1px dashed #cecece;
   line-height: 40px;
   font-size: 16px;
   letter-spacing: 2px;
@@ -1027,7 +1122,7 @@ a {
 
 .subpage-qualification-table td:nth-child(even) {
   text-align: center;
-  width: 30%;
+  width: 22%;
 }
 
 /* 人力资源 */
@@ -1049,7 +1144,9 @@ a {
   color: #5c5c5c;
   line-height: 60px;
 }
-
+.zp-list{
+  padding: 0 65px;
+}
 .contact .subpage-content {
   width: 100%;
   padding-left: 0;
@@ -1060,49 +1157,43 @@ a {
 .contact-map {
   position: relative;
   max-width: 1062px;
-  height: 360px;
   margin: 0 auto;
-  box-shadow: 0 0 5px 1px #ddd
 }
 
 .contact-map .map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 70%
+  width: 100%;
+  height: 360px;
+  border: 1px solid #f2f2f2
 }
-
-.contact-map .address {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  padding: 60px 0;
-  background-color: rgba(102, 102, 102, 1);
-  color: #fff;
-  z-index: 999;
-}
-
 .address-content {
-  line-height: 40px;
+  line-height: 48px;
   position: relative;
-  width: 400px;
+  margin: 20px auto;
+  border: 1px solid #f2f2f2
+
+}
+.address-content .address-item{
   padding: 0 20px;
-  margin: 0 auto;
+  height: auto;
+  overflow: hidden;
+  font-size: 16px;
+} 
+.address-content .address-item:nth-child(odd){
+  background-color: #efefef;
+	opacity: 0.8;
+} 
+.address-content .address-label{
+  float: left;
+  text-align: center;
+  width: 12%;
+  font-weight: bold;
 }
-
-.address .qcode {
-  position: absolute;
-  top: 116px;
-  right: 80px;
-  width: 122px;
-  height: 122px;
-  background: url("../images/qr-code.png") 0 0 no-repeat;
-  background-size: 100%;
+.address-content .address-text{
+  float: left;
+  width: 80%;
+  padding-left: 30px;
+  border-left: 1px solid #e0e0e0;
 }
-
 .BMap_cpyCtrl,
 .anchorBL {
   display: none
