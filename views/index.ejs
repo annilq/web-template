@@ -23,9 +23,11 @@
         <% [1,2,3].forEach(function(user,index){ %>
           <div class="news-figure">
             <img src="images/index-new<%-index+1 %>.png" alt="">
-            <p> 2018年6月10日，黄水强总经理与宁波大荣建设集团领导一行交流
-            </p>
-            <div class="news-button tc">READ MORE</div>
+            <div class="news-active">
+              <p> 2018年6月10日，黄水强总经理与宁波大荣建设集团领导一行交流
+              </p>
+              <a class="news-button tc">READ MORE</a>  
+            </div>
           </div>
           <% }); %>
       </div>
@@ -35,6 +37,8 @@
     </div>
   
   </div>
+  <div class="container">
+
   <div class="project-section section">
     <div class="section-title tc">
       业绩工程
@@ -60,6 +64,7 @@
         <% }); %>
     </div>
   </div>
+  </div>
   <%- include('footer'); -%>
     </body>
 
@@ -71,7 +76,7 @@
         });
         var slickOptions = {
           touchMove: false,
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
           autoplay: true,
           autoplaySpeed: 1000,
