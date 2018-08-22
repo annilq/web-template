@@ -420,11 +420,11 @@ a {
 }
 
 .news-figure {
-  max-width: 360px;
+  width: 33%;
   height: 344px;
   position: relative;
   display: inline-block;
-  margin: 0 14px;
+  /* margin: 0 14px; */
   box-shadow: 0 0 24px #e9e5e5;
   overflow: hidden;
 }
@@ -432,23 +432,25 @@ a {
 .news-figure:last-child {
   margin-right: 0;
 }
+.news-figure:first-child {
+  margin-left: 0;
+}
 .news-figure img {
   transition: all .7s;
-
+  width: 100%;
 }
 .news-figure:hover img {
   transform: scale(1.1, 1.1);
 }
 
-.news-figure .news-active {
-  text-align: center;
+.news-figure .news-active{
+  text-align: left;
   position: absolute;
   bottom: -120px;
   left: 0;
   right: 0;
   padding: 14px 18px;
   font-size: 16px;
-  letter-spacing: 2px;
   line-height: 25px;
   color: #2b2a2a;
   transition: all .3s;
@@ -459,12 +461,12 @@ a {
 }
 
 .news-figure p {
- text-align: left;
  height: 3em;
  line-height: 1.5;
  overflow: hidden;
+ letter-spacing: 2px;
 }
-.news-figure .news-button {
+/* .news-figure .news-button {
   width: 140px;
   line-height: 34px;
   font-size: 12px;
@@ -475,7 +477,7 @@ a {
   display: inline-block;
   margin: 6px auto 0;
   cursor: pointer;
-}
+} */
 
 .news-more {
   width: 56px;
@@ -608,7 +610,7 @@ a {
   color: #333333;
 }
 
-.project-figure .read-more {
+.read-more {
   width: 103px;
   height: 22px;
   padding: 0 5px;
@@ -617,6 +619,7 @@ a {
   color: #fff;
   background: #0a62be url("../images/read-more.png") 90% center no-repeat;
   border-radius: 4px;
+  display: block;
   cursor: pointer;
 }
 
