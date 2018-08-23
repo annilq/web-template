@@ -2,6 +2,10 @@
 
 /* common styles */
 
+#panel {
+    padding-top: 0;
+}
+
 .back-up,
 .share-btns,
 .logo,
@@ -133,7 +137,7 @@
 }
 
 .pagination a {
-    padding: 0 10px;
+    padding: 0 5px;
     margin-right: 0;
 }
 
@@ -233,7 +237,6 @@
 }
 
 .subpage-content-date {
-    margin-bottom: -15px;
     margin-top: -24px;
 }
 
@@ -248,7 +251,7 @@
 }
 
 .news-more {
-    margin: 10px auto
+    font-size: 12px;
 }
 
 .news-text {
@@ -261,7 +264,8 @@
 }
 
 .news-figure {
-    margin-bottom: 20px;
+    width: 80%;
+    margin-bottom: 10px;
 }
 
 /* qualification */
@@ -315,13 +319,16 @@
     line-height: 30px;
     font-size: 12px;
     padding: 0 10px;
+    width: 56%;
 }
 
 .hr-invite .picture-list p {
     line-height: 30px;
     font-size: 12px;
 }
-
+.zp-list{
+    padding: 0;
+}
 .contact-map {
     width: 96%;
     margin: 0 auto;
@@ -341,18 +348,22 @@
     top: 50%;
 }
 
-.address-content .address-item{
+.address-content .address-item {
     line-height: 20px;
     font-size: 12px;
 }
-.address-content .address-label,.address-content .address-text{
+
+.address-content .address-label,
+.address-content .address-text {
     float: none;
     text-align: left;
     width: 100%
 }
-.address-content .address-text{
+
+.address-content .address-text {
     padding: 0;
 }
+
 /* 画册 */
 
 .culture-container {
