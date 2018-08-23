@@ -128,6 +128,7 @@ a {
 
 .sub-menu-container .submenu {
   position: absolute;
+  display: none;
 }
 
 .submenu {

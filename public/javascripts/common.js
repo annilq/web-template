@@ -32,11 +32,15 @@ $(".menu .menu-item").hover(
     var $tar = $(e.currentTarget),
       $submenu = $(".submenu");
     $(".sub-menu-container").show();
+    var menuId = $tar[0].id;
+    $submenu.hide();
+    var $curSubmenu=$("#sub"+menuId);
     var offset = $tar.offset();
     var tarWidth = $tar.width();
-    var menuWidth = $submenu.width();
+    var menuWidth = $curSubmenu.width();
     var menuOffset = offset.left - menuWidth / 2 + tarWidth / 2;
-    $submenu.css("left", menuOffset);
+    $curSubmenu.show();
+    $curSubmenu.css("left", menuOffset);
   },
   function(e) {
     window.timer = setTimeout(function() {
