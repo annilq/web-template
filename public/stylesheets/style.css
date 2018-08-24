@@ -387,11 +387,11 @@ a {
 }
 
 .slick-dots li.slick-active button:before {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .slick-dots li button:before {
-  color: rgba(255, 255, 255, 0.36);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .banner {
