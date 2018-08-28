@@ -176,7 +176,6 @@ function loadApp() {
 if (navigator.userAgent.indexOf("Mobile") < 0) {
   // 将企业画册的scr重新复制
   $(".sj-book img").each(function(index, img) {
-    var src = $(img).attr("data-lazy");
     img.src = $(img).attr("data-lazy");
   });
   loadApp();

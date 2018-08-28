@@ -90,31 +90,14 @@
           autoplay: true,
           autoplaySpeed: 1000,
         };
+        $projects = $('.project-list');
         if($.browser.msie){
           var version=parseInt($.browser.version,10);
           if(version>8){
-            $projects = $('.project-list');
             $projects.slick(slickOptions);
-            enquire.register("screen and (max-width: 1000px)", {
-              match: function () {
-                $projects.slick("unslick")
-              },
-              unmatch: function () {
-                $projects.slick(slickOptions);
-              }
-            });
           }
-        }else{
-          $projects = $('.project-list');
-            $projects.slick(slickOptions);
-            enquire.register("screen and (max-width: 1000px)", {
-              match: function () {
-                $projects.slick("unslick")
-              },
-              unmatch: function () {
-                $projects.slick(slickOptions);
-              }
-            });
+        }else if (navigator.userAgent.indexOf("Mobile")<0) {
+          $projects.slick(slickOptions);
         }
       })
     </script>

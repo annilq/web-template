@@ -6,15 +6,6 @@ $(".back-up").click(function() {
     300
   );
 });
-// $("a").click(function(e) {
-//   var $tar = $(e.currentTarget);
-//   var href = $tar.attr("href");
-//   var protocol = window.location.protocol;
-//   if (href.indexOf("html") < 0 && protocol.indexOf("http") < 0) {
-//     e.preventDefault();
-//     window.location.href = href + ".html";
-//   }
-// });
 if (navigator.userAgent.indexOf("Mobile") >-1) {
   window.slideout = new Slideout({
     panel: document.getElementById("panel"),
@@ -85,3 +76,6 @@ $("[data-submenu]").hover(
     $(e.currentTarget).hide();
   }
 );
+$("img").on("error","document",function(e){
+  $(this).attr("src", "/static/web/images/yjgc-de-img.png");
+})
