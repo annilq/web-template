@@ -200,7 +200,7 @@ if (navigator.userAgent.indexOf("Mobile") < 0) {
     var num = parseInt(e.currentTarget.value, 10);
     $(".sj-book").slick("slickGoTo", num);
     $(".culture-current-page").text(num);
-    setSliderPos(currentSlide) 
+    setSliderPos(num) 
    });
   function nextpagehandle(currentSlide) {
     var length = $(".slick-slide").length;
