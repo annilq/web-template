@@ -90,7 +90,9 @@
           autoplay: true,
           autoplaySpeed: 1000,
         };
-        if (navigator.userAgent.indexOf("MSIE") <0) {
+        if($.browser.msie){
+          var version=parseInt($.browser.version,10);
+          if(version>8){
             $projects = $('.project-list');
             $projects.slick(slickOptions);
             enquire.register("screen and (max-width: 1000px)", {
@@ -101,7 +103,19 @@
                 $projects.slick(slickOptions);
               }
             });
-      } 
+          }
+        }else{
+          $projects = $('.project-list');
+            $projects.slick(slickOptions);
+            enquire.register("screen and (max-width: 1000px)", {
+              match: function () {
+                $projects.slick("unslick")
+              },
+              unmatch: function () {
+                $projects.slick(slickOptions);
+              }
+            });
+        }
       })
     </script>
     </body>

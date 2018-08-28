@@ -813,6 +813,7 @@ a {
 .sj-book {
   max-width: 906px;
   max-height: 615px;
+  overflow: hidden;
 }
 
 .animated {
@@ -1123,6 +1124,7 @@ a {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  background-color:#fff;
   background-color: rgba(255, 255, 255, 0.9);
   opacity: 0.9;
 }
