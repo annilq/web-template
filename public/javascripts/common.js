@@ -15,16 +15,19 @@ $(".back-up").click(function() {
 //     window.location.href = href + ".html";
 //   }
 // });
-window.slideout = new Slideout({
-  panel: document.getElementById("panel"),
-  menu: document.getElementById("menu"),
-  padding: 90,
-  touch: false,
-  tolerance: 70
-});
-$(".mobile-menu-icon").click(function(e) {
-  window.slideout.toggle();
-});
+if (navigator.userAgent.indexOf("Mobile") >-1) {
+  window.slideout = new Slideout({
+    panel: document.getElementById("panel"),
+    menu: document.getElementById("menu"),
+    padding: 90,
+    touch: false,
+    tolerance: 70
+  });
+  $(".mobile-menu-icon").click(function(e) {
+    window.slideout.toggle();
+  });
+} 
+
 // 顶部menu交互
 $(".menu .menu-item").hover(
   function(e) {

@@ -1,13 +1,19 @@
 <%- include('header'); -%>
   <ul class="index-banner banner">
     <li class="banner-item">
-      <a href=""><img src="images/index-banner1.png"></a> 
+      <a href="">
+        <img src="images/index-banner1.png">
+      </a>
     </li>
     <li class="banner-item">
-      <a href=""><img src="images/index-banner2.png"></a> 
+      <a href="">
+        <img src="images/index-banner2.png">
+      </a>
     </li>
     <li class="banner-item">
-      <a href=""><img src="images/index-banner3.png"></a> 
+      <a href="">
+        <img src="images/index-banner3.png">
+      </a>
     </li>
   </ul>
   <div class="news-section">
@@ -26,7 +32,7 @@
             <div class="news-active">
               <p> 2018年6月10日，黄水强总经理与宁波大荣建设集团领导一行交流
               </p>
-              <a class="read-more">Read More</a>  
+              <a class="read-more">Read More</a>
             </div>
           </div>
           <% }); %>
@@ -35,35 +41,35 @@
         更多>
       </a>
     </div>
-  
+
   </div>
   <div class="container">
 
-  <div class="project-section section">
-    <div class="section-title tc">
-      业绩工程
-    </div>
-    <!-- <div class="section-tips tc">
+    <div class="project-section section">
+      <div class="section-title tc">
+        业绩工程
+      </div>
+      <!-- <div class="section-tips tc">
       推动行业进步、引领行业发展,中浩建设愿与社会各界朋友一起，真诚合作，携手共赢，</br>
       共创美好未来！
     </div> -->
-    <!--元素大于10个才做成两行，平分数目，小于10个的话做一行滚动  -->
-    <div class="project-list">
-      <% [1,2,3,4,5,6].forEach(function(user,index){ %>
-        <div class="project-figure">
-          <img src="images/index-project<%-index+1 %>.png" alt="">
-          <div class="project-active">
-            <div class="project-title">
-              庐山西海
-              <a class="read-more">
-                Read More
-              </a>
+      <!--元素大于10个才做成两行，平分数目，小于10个的话做一行滚动  -->
+      <div class="project-list">
+        <% [1,2,3,4,5].forEach(function(user,index){ %>
+          <div class="project-figure">
+            <img src="images/index-project<%-index+1 %>.png" alt="">
+            <div class="project-active">
+              <div class="project-title">
+                庐山西海
+                <a class="read-more">
+                  Read More
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <% }); %>
+          <% }); %>
+      </div>
     </div>
-  </div>
   </div>
   <%- include('footer'); -%>
     </body>
@@ -71,10 +77,11 @@
     </html>
     <script>
       $(document).ready(function () {
-        $('.banner').slick({
-          dots: true,
-          autoplaySpeed: 1000,
-          autoplay: true
+        $('.banner').bxSlider({
+          auto: true,
+          autoControls: true,
+          stopAutoOnClick: true,
+          pager: true,
         });
         var slickOptions = {
           touchMove: false,
@@ -83,16 +90,18 @@
           autoplay: true,
           autoplaySpeed: 1000,
         };
-        $projects=$('.project-list');
-        $projects.slick(slickOptions);
-        enquire.register("screen and (max-width: 1000px)", {
-          match: function () {
-            $projects.slick("unslick")
-          },
-          unmatch: function () {
+        if (navigator.userAgent.indexOf("MSIE") <0) {
+            $projects = $('.project-list');
             $projects.slick(slickOptions);
-          }
-        });
+            enquire.register("screen and (max-width: 1000px)", {
+              match: function () {
+                $projects.slick("unslick")
+              },
+              unmatch: function () {
+                $projects.slick(slickOptions);
+              }
+            });
+      } 
       })
     </script>
     </body>

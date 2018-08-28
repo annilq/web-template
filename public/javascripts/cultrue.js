@@ -18,8 +18,8 @@ function addPage(page, book) {
 
   if (!book.turn("hasPage", page)) {
     var element = $("<div />", {
-      class: "own-size",
-      css: { width: 453, height: 615 }
+      "class": "own-size",
+      "css": { width: 453, height: 615 }
     }).html('<div class="loader"></div>');
 
     if (book.turn("addPage", element, page)) {
@@ -152,7 +152,7 @@ function loadApp() {
     start: function(event, ui) {
       if (!window._thumbPreview) {
         _thumbPreview = $("<div />", {
-          class: "thumbnail"
+          "class": "thumbnail"
         }).html("<div></div>");
         setPreview(ui.value);
         _thumbPreview.appendTo($(ui.handle));
