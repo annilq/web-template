@@ -16,9 +16,12 @@
 .header {
     height: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-
+.top-part{
+    padding: 0;
+    border: none;
+}
 .mobile-header {
     display: block
 }
@@ -67,7 +70,9 @@
 .menu-item.active {
     background-color: #0a55a4;
 }
-
+.sub-menu-container{
+    display: none !important;
+}
 .slideout-menu-left {
     left: 0;
 }
