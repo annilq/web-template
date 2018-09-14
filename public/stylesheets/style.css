@@ -737,7 +737,7 @@ a {
 .subpage-content-text img {
   margin: 30px auto;
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 .subpage-content-text img:first-child {
@@ -1110,7 +1110,7 @@ a {
 
 .picture-list li {
   width: 48%;
-  /* height: 220px; */
+  height: 270px;
   float: left;
   position: relative;
   margin-bottom: 20px;
@@ -1123,6 +1123,7 @@ a {
 .picture-list li img {
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 .picture-list li .project-title {
