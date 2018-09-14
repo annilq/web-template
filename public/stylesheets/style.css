@@ -991,10 +991,8 @@ a {
 
 .news-list .news-pic {
   float: left;
-  width: 46%;
-  /* height: 260px; */
-  max-height: 260px;
-  max-width: 360px;
+  height: 260px;
+  width: 360px;
 }
 
 .news-pic img {
@@ -1004,7 +1002,9 @@ a {
 
 .news-list .news-content {
   float: right;
-  width: 51%;
+  width: 500px;
+  height: 260px;
+  padding: 0 10px;
 }
 
 .news-list .news-title {

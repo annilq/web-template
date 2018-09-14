@@ -16,6 +16,11 @@ if (navigator.userAgent.indexOf("Mobile") >-1) {
   });
   $(".mobile-menu-icon").click(function(e) {
     window.slideout.toggle();
+    if(window.slideout.isOpen()){
+      $(".logo").show();
+    }else{
+      $(".logo").hide();
+    }
   });
 } 
 

@@ -8,7 +8,6 @@
 
 .back-up,
 .share-btns,
-.logo,
 .email {
     display: none
 }
@@ -25,7 +24,18 @@
 .mobile-header {
     display: block
 }
-
+.header .logo{
+    width: 70px;
+    height: 44px;
+    position: fixed;
+    background: url("../images/m-logo.png") center no-repeat;
+    top: 0;
+    display: none;
+    z-index: 999;
+    background-size: contain;
+    padding: 0 10px;
+    background-origin: content-box;
+}
 /* menu */
 
 .menu {
@@ -236,12 +246,19 @@
 
 .subpage-title-container {
     font-size: 16px;
+    margin-bottom: 20px;
+}
+.sub-title {
+    font-size: 14px;
+    margin: 0;
 }
 
 .subpage-title {
-    margin: 5px 0 20px;
+    margin: 5px 0 10px;
 }
-
+.subpage-content-header{
+    margin-bottom: 20px;
+}
 .subpage-content-date {
     margin-top: -24px;
 }
@@ -249,7 +266,15 @@
 .subpage-content-text img {
     margin: 14px auto
 }
-
+.news-list .news-pic{
+    width: 46%;
+    height: auto;
+}
+.news-list .news-content{
+    width: 50%;
+    height: auto;
+    padding: 0 5px;
+}
 /* news */
 
 .news-list {
