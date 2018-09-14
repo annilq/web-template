@@ -1096,7 +1096,9 @@ a {
 .next-btn {
   margin-right: 0;
 }
-
+.pre-next-btn a:only-child{
+  margin: 0;
+}
 .pre-btn.disable,
 .next-btn.disable {
   color: rgba(100, 100, 100, .3);
