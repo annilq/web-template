@@ -36,7 +36,7 @@ a {
 .top-part {
   padding-top: 18px;
   background-color: #fff;
-  border-bottom: 1px solid #0054ab;
+  border-bottom: 3px solid #0a62be;
 }
 
 .mobile-header {
@@ -110,7 +110,6 @@ a {
   position: absolute;
   content: "";
   height: 2px;
-  background-color: #0054ab;
   left: 0;
   right: 0;
   bottom: -17px;
@@ -735,7 +734,7 @@ a {
 } */
 
 .subpage-content-text img {
-  margin: 30px auto;
+  margin: 0px auto;
   display: block;
   max-width: 100%;
 }
@@ -1128,7 +1127,7 @@ a {
   height: 100%;
 }
 
-.picture-list li .project-title {
+.picture-list li .project-title,.picture-list .news-title {
   position: absolute;
   bottom: 0;
   left: 0;
