@@ -1,18 +1,18 @@
 $(".back-up").click(function() {
-	scrollToTop();
+  scrollToTop();
 });
 
-function scrollToTop(){
-	if(navigator.userAgent.indexOf("Mobile") < 0){
-		  $("body,html").animate(
-				    {
-				      scrollTop: 0
-				    },
-				    300
-				  );
-	}
+function scrollToTop() {
+  if (navigator.userAgent.indexOf("Mobile") < 0) {
+    $("body,html").animate(
+      {
+        scrollTop: 0
+      },
+      300
+    );
+  }
 }
-if (navigator.userAgent.indexOf("Mobile") >-1) {
+if (navigator.userAgent.indexOf("Mobile") > -1) {
   window.slideout = new Slideout({
     panel: document.getElementById("panel"),
     menu: document.getElementById("menu"),
@@ -22,34 +22,34 @@ if (navigator.userAgent.indexOf("Mobile") >-1) {
   });
   $(".mobile-menu-icon").click(function(e) {
     window.slideout.toggle();
-    if(window.slideout.isOpen()){
+    if (window.slideout.isOpen()) {
       $(".logo").show();
-    }else{
+    } else {
       $(".logo").hide();
     }
   });
-} 
+}
 
 // 顶部menu交互
 $(".menu .menu-item").hover(
   function(e) {
-	    clearTimeout(window.timer);
-	    var $tar = $(e.currentTarget);
-	    if($("#sub"+$tar.attr('id')).length > 0){
-	        var $submenu = $(".submenu");
-	        $(".sub-menu-container").show();
-	        var menuId = $tar[0].id;
-	        $submenu.hide();
-	        var $curSubmenu=$("#sub"+menuId);
-	        var offset = $tar.offset();
-	        var tarWidth = $tar.width();
-	        var menuWidth = $curSubmenu.width();
-	        var menuOffset = offset.left - menuWidth / 2 + tarWidth / 2;
-	        $curSubmenu.show();
-	        $curSubmenu.css("left", menuOffset);
-	    }else{
-	        $(".sub-menu-container").hide();
-	    }
+    clearTimeout(window.timer);
+    var $tar = $(e.currentTarget);
+    if ($("#sub" + $tar.attr("id")).length > 0) {
+      var $submenu = $(".submenu");
+      $(".sub-menu-container").show();
+      var menuId = $tar[0].id;
+      $submenu.hide();
+      var $curSubmenu = $("#sub" + menuId);
+      var offset = $tar.offset();
+      var tarWidth = $tar.width();
+      var menuWidth = $curSubmenu.width();
+      var menuOffset = offset.left - menuWidth / 2 + tarWidth / 2;
+      $curSubmenu.show();
+      $curSubmenu.css("left", menuOffset);
+    } else {
+      $(".sub-menu-container").hide();
+    }
   },
   function(e) {
     window.timer = setTimeout(function() {
@@ -91,6 +91,15 @@ $("[data-submenu]").hover(
     $(e.currentTarget).hide();
   }
 );
-$("img").on("error","document",function(e){
+$("img").on("error", "document", function(e) {
   $(this).attr("src", "/static/web/images/yjgc-de-img.png");
-})
+});
+// 首页跳转
+if (navigator.userAgent.indexOf("Mobile") > -1) {
+  $(".news-section .news-figure,.project-section .project-figure").on("click", function(e) {
+    var href=$(this).find("a").attr("href");
+    if(href){
+      window.location.href=href;
+    }
+  });
+}
