@@ -280,12 +280,18 @@
 }
 
 /* news */
-
+.news-section{
+    background-color: #fff;
+}
 .news-section .news-list,.project-list {
     padding: 0 15px;
     text-align: justify;
 }
-
+.news-section .news-list,.project-list::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
 .news-list .news-pic{
     width: 46%;
     height: auto;
@@ -314,6 +320,7 @@
     height: 105px;
     margin: 0;
     margin-bottom: 10px;
+    box-shadow: none;
 }
 .news-figure .news-active,.project-figure .project-active{
     bottom: 0;
