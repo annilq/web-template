@@ -81,7 +81,13 @@ a {
   vertical-align: bottom;
   background: url("../images/yjglogo.png") center 0 no-repeat;
 }
-
+.header .email a{
+  color: #323233;
+}
+.header .email a:hover{
+  color: #0a62be;
+  text-decoration: underline;
+}
 .menu {
   float: right;
   line-height: 50px;
@@ -106,6 +112,9 @@ a {
   cursor: pointer;
 }
 
+.menu-item a:hover {
+ color: #0a62be;
+}
 .menu-item a:hover::after {
   position: absolute;
   content: "";
@@ -245,6 +254,9 @@ a {
   margin-left: 1%;
   float: left;
   line-height: 40px;
+}
+.sub-link-item:hover{
+  color: #0a62be;
 }
 
 .footer .copyright {
