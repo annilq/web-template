@@ -1,6 +1,7 @@
 body {
   font: 14px "MicrosoftYaHei", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
+  user-select: none;
 }
 
 ul,
@@ -622,7 +623,7 @@ a {
   position: absolute;
   left: 30px;
   bottom: 18px;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 40px;
   color: #333333;
 }
@@ -1030,7 +1031,7 @@ a {
 }
 
 .slim .news-title {
-  font-size: 12px;
+  font-size: 14px;
   width: 80%;
   white-space: nowrap;
   text-overflow: ellipsis;

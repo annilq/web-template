@@ -287,7 +287,7 @@
     padding: 0 15px;
     text-align: justify;
 }
-.project-list::after {
+.news-list::after,.project-list::after {
     content: "";
     display: inline-block;
     width: 100%;
