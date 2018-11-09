@@ -112,6 +112,10 @@
           $(this).find(".slick-next").css({visibility:"hidden"});
         }
       })
+      $(".news-list").mouseleave(function(e){
+        $(this).find(".slick-prev").css({visibility:"hidden"});
+        $(this).find(".slick-next").css({visibility:"hidden"});
+      })
       $('.news-list').slick({
         infinite: true,
         slidesToShow: 3,
