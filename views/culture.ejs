@@ -13,7 +13,7 @@
                         <% ("1".repeat(66).split("")).forEach(function(user,index){ %>
                         <div data-picid="<%-index%>">
                             <!-- <img src="images/album/<%-index %>.png" alt=""> -->
-                            <img data-lazy="images/album/<%-index %>.png" alt="">
+                            <img data-lazy="images/album/<%-(index+1) %>.png" alt="">
                         </div>
                         <% }); %>
                     </div>

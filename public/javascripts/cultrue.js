@@ -123,6 +123,7 @@ function loadApp() {
       start: function(e, pageObj) {
         moveBar(true);
       },
+      
 
       end: function(e, pageObj) {
         var book = $(this);
