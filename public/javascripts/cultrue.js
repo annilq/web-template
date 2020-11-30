@@ -1,3 +1,4 @@
+var totalPages =114
 function loadPage(page) {
   // $.ajax({ url: "images/album/" + page + ".png" }).done(function(pagePic) {
   //   $(".sj-book .p" + page).html(pagePic);
@@ -90,7 +91,7 @@ function loadApp() {
     acceleration: !isChrome(),
     autoCenter: true,
     duration: 1000,
-    pages: 66,
+    pages: totalPages,
     when: {
       turned: function(e, page, view) {
         var book = $(this);
@@ -103,7 +104,7 @@ function loadApp() {
           $(".prebtn").hide();
           // $(".book-left,.book-right").hide();
         }
-        if (page == 66) {
+        if (page == totalPages) {
           $(".nextbtn").hide();
           // $(".book-left,.book-right").hide();
         }
@@ -113,7 +114,7 @@ function loadApp() {
         book.turn("center");
       },
       turning: function(event, page, view) {
-        if (page == 1 || page == 66) {
+        if (page == 1 || page == totalPages) {
           $(".book-left,.book-right").hide();
         } else {
           $(".book-left,.book-right").show();
@@ -132,9 +133,10 @@ function loadApp() {
 
         moveBar(false);
       },
-      missing: function(e, pages) {
-        for (var i = 0; i < pages.length; i++) {
-          addPage(pages[i], $(this));
+      missing: function(e, totalPages) {
+        console.log(totalPages.length);
+        for (var i = 0; i < totalPages.length; i++) {
+          addPage(totalPages[i], $(this));
         }
       }
     }
@@ -148,7 +150,7 @@ function loadApp() {
 
   $("#slider").slider({
     min: 0,
-    max: 65,
+    max: totalPages-1,
     start: function(event, ui) {
       if (!window._thumbPreview) {
         _thumbPreview = $("<div />", {
@@ -214,7 +216,7 @@ if (navigator.userAgent.indexOf("Mobile") < 0) {
   }
 }
 function setSliderPos(currentSlide){
-  var per = currentSlide/ 66;
+  var per = currentSlide/ totalPages;
   var width = $("#slider-bar").width()-16;
   $("#slider").css({ transform: "translateX(" + per * width + "px)" });
 }

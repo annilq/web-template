@@ -1,51 +1,51 @@
 <%- include('header'); -%>
-    <div class="subpage">
-        <ul class="subpage-banner banner">
-            <li class="banner-item">
-                <img src="images/qywh-banner.png">
-            </li>
-        </ul>
-        <div class="culture-container">
-            <div class="container">
-                <div id="canvas" class="culture-album">
-                    <div id="book-zoom">
-                        <div class="sj-book">
-                            <% ("1".repeat(66).split("")).forEach(function(user,index){ %>
-                                <div data-picid="<%-index%>">
-                                    <!-- <img src="images/album/<%-index %>.png" alt=""> -->
-                                    <img data-lazy="images/album/<%-index %>.png" alt="">
-                                </div>
-                                <% }); %>
-                        </div>
-                        <div class="book-right"></div>
-                        <div class="book-left"></div>
-                    </div>
-                    <div class="prebtn"></div>
-                    <div class="nextbtn"></div>
-                </div>
-                <div id="slider-bar" class="turnjs-slider">
-                    <div id="slider"></div>
-                </div>
-                <div class="culture-pagation">第
-                    <span class="culture-current-page">0</span> 页，共65页 跳转至
-                    <select>
+<div class="subpage">
+    <ul class="subpage-banner banner">
+        <li class="banner-item">
+            <img src="images/qywh-banner.png">
+        </li>
+    </ul>
+    <div class="culture-container">
+        <div class="container">
+            <div id="canvas" class="culture-album">
+                <div id="book-zoom">
+                    <div class="sj-book">
                         <% ("1".repeat(66).split("")).forEach(function(user,index){ %>
-                            <option value="<%-index%>">
-                                <%-index%>
-                            </option>
-                            <% }); %>
-                    </select>
-                    页
+                        <div data-picid="<%-index%>">
+                            <!-- <img src="images/album/<%-index %>.png" alt=""> -->
+                            <img data-lazy="images/album/<%-index %>.png" alt="">
+                        </div>
+                        <% }); %>
+                    </div>
+                    <div class="book-right"></div>
+                    <div class="book-left"></div>
                 </div>
-
+                <div class="prebtn"></div>
+                <div class="nextbtn"></div>
             </div>
+            <div id="slider-bar" class="turnjs-slider">
+                <div id="slider"></div>
+            </div>
+            <div class="culture-pagation">第
+                <span class="culture-current-page">1</span> 页，共114页 跳转至
+                <select>
+                    <% ("1".repeat(114).split("")).forEach(function(user,index){ %>
+                    <option value="<%-(index+1)%>">
+                        <%-(index+1)%>
+                    </option>
+                    <% }); %>
+                </select>
+                页
+            </div>
+
         </div>
     </div>
-    <%- include('footer'); -%>
-        <script src="libs/jquery-ui-1.8.20.custom.min.js"></script>
-        <script src="libs/hash.js"></script>
-        <script src="libs/turn.min.js"></script>
-        <script src="javascripts/cultrue.js"></script>
-        </body>
+</div>
+<%- include('footer'); -%>
+<script src="libs/jquery-ui-1.8.20.custom.min.js"></script>
+<script src="libs/hash.js"></script>
+<script src="libs/turn.min.js"></script>
+<script src="javascripts/cultrue.js"></script>
+</body>
 
-        </html>
+</html>
